@@ -14,6 +14,7 @@
 		E4F1E6CE1F169A6D00094D27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F1E6CC1F169A6D00094D27 /* LaunchScreen.storyboard */; };
 		E4F1E6D81F169BA800094D27 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6D71F169BA800094D27 /* HomeEventTableViewCell.swift */; };
 		E4F1E6DB1F169C7400094D27 /* HouseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6DA1F169C7400094D27 /* HouseEvent.swift */; };
+		E4F1E6E31F16C14000094D27 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6E21F16C14000094D27 /* EventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E4F1E6CF1F169A6D00094D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4F1E6D71F169BA800094D27 /* HomeEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventTableViewCell.swift; sourceTree = "<group>"; };
 		E4F1E6DA1F169C7400094D27 /* HouseEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseEvent.swift; sourceTree = "<group>"; };
+		E4F1E6E21F16C14000094D27 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				E4F1E6D61F169AD800094D27 /* home */,
+				E4F1E6E11F16C10700094D27 /* eventDetail */,
 			);
 			name = screens;
 			sourceTree = "<group>";
@@ -92,6 +95,14 @@
 				E4F1E6DA1F169C7400094D27 /* HouseEvent.swift */,
 			);
 			name = models;
+			sourceTree = "<group>";
+		};
+		E4F1E6E11F16C10700094D27 /* eventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E4F1E6E21F16C14000094D27 /* EventDetailViewController.swift */,
+			);
+			name = eventDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4F1E6DB1F169C7400094D27 /* HouseEvent.swift in Sources */,
+				E4F1E6E31F16C14000094D27 /* EventDetailViewController.swift in Sources */,
 				E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */,
 				E4F1E6D81F169BA800094D27 /* HomeEventTableViewCell.swift in Sources */,
 				E4F1E6C41F169A6D00094D27 /* AppDelegate.swift in Sources */,
@@ -331,6 +343,7 @@
 				E4F1E6D41F169A6D00094D27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
