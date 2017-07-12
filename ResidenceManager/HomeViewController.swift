@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
                 self.events.append(contentsOf: events)
                 
             case let .failure(error):
-                print("ERROR at prepareEvents", error)
+                print("ERROR at prepareEvents", error as Any)
             }
             
             self.eventTableView.reloadData()
