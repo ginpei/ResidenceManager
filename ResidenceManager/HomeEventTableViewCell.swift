@@ -12,6 +12,7 @@ class HomeEventTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     static let identifier = "HomeEventTableViewCell"
+    static let detailSegueIdentifier = "showEventDetail"
     
     private var _event: HouseEvent?
     var event: HouseEvent? {

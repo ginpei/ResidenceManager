@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
         
         // prepare UIs
         eventTableView.dataSource = self
+        eventTableView.delegate = self
     }
     
     func prepareEvents() {
@@ -45,7 +46,15 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination
+        
+        if let vc = destination as? EventDetailViewController {
+            let indexPath = eventTableView.indexPathForSelectedRow!
+            let event = events[indexPath.row]
+            vc.event = event
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -60,5 +69,11 @@ extension HomeViewController: UITableViewDataSource {
         cell.event = event
         
         return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        eventTableView.deselectRow(at: indexPath, animated: true)
     }
 }

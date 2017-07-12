@@ -49,6 +49,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="titleLabel" destination="w1Z-N9-VWg" id="SRP-Jt-mki"/>
+                                            <segue destination="jeA-8M-N63" kind="show" identifier="showEventDetail" id="hqK-jL-lMT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -70,6 +71,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="922" y="784"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="bEg-sD-KVP">
+            <objects>
+                <viewController id="jeA-8M-N63" customClass="EventDetailViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vf4-kz-grA"/>
+                        <viewControllerLayoutGuide type="bottom" id="gW6-M3-4G8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w9J-TT-iV5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjG-rU-lpv">
+                                <rect key="frame" x="16" y="64" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="EjG-rU-lpv" secondAttribute="trailing" id="B8u-CD-tNY"/>
+                            <constraint firstItem="EjG-rU-lpv" firstAttribute="leading" secondItem="w9J-TT-iV5" secondAttribute="leadingMargin" id="GCO-iA-i9G"/>
+                            <constraint firstItem="EjG-rU-lpv" firstAttribute="top" secondItem="vf4-kz-grA" secondAttribute="bottom" id="WhK-cW-QW6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="EjG-rU-lpv" id="C3m-jz-oip"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZnD-dL-c2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2209" y="649"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v9n-8v-5TE">
