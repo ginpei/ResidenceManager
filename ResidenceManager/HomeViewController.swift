@@ -17,14 +17,27 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // prepare data
-        events.append(contentsOf: [
-            HouseEvent(title: "BBQ at House 1"),
-            HouseEvent(title: "BBQ at English Bay"),
-            HouseEvent(title: "BBQ at Nanaimo Station"),
-            ])
+        prepareEvents()
         
         // prepare UIs
         eventTableView.dataSource = self
+    }
+    
+    func prepareEvents() {
+        let store = HouseEventStore()
+        store.fetchAll() { (result) in
+            self.events.removeAll()
+            
+            switch result {
+            case let .success(events):
+                self.events.append(contentsOf: events)
+                
+            case let .failure(error):
+                print("ERROR at prepareEvents", error)
+            }
+            
+            self.eventTableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {

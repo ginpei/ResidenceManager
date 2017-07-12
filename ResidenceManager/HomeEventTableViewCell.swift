@@ -13,8 +13,19 @@ class HomeEventTableViewCell: UITableViewCell {
     
     static let identifier = "HomeEventTableViewCell"
     
-    var event: HouseEvent?
-    
+    private var _event: HouseEvent?
+    var event: HouseEvent? {
+        get {
+            return _event
+        }
+        set(v) {
+            _event = v
+            if titleLabel != nil {
+                titleLabel.text = v?.title
+            }
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
