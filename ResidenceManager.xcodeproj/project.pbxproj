@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41B56EA1F181613001227F5 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56E91F181612001227F5 /* ChatMessage.swift */; };
+		E41B56EC1F181653001227F5 /* ChatThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56EB1F181653001227F5 /* ChatThread.swift */; };
+		E41B56EE1F181797001227F5 /* HomeMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56ED1F181797001227F5 /* HomeMessageTableViewCell.swift */; };
 		E4F1E6C41F169A6D00094D27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6C31F169A6D00094D27 /* AppDelegate.swift */; };
 		E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6C51F169A6D00094D27 /* HomeViewController.swift */; };
 		E4F1E6C91F169A6D00094D27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F1E6C71F169A6D00094D27 /* Main.storyboard */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E41B56E91F181612001227F5 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		E41B56EB1F181653001227F5 /* ChatThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatThread.swift; sourceTree = "<group>"; };
+		E41B56ED1F181797001227F5 /* HomeMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMessageTableViewCell.swift; sourceTree = "<group>"; };
 		E4F1E6C01F169A6D00094D27 /* ResidenceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResidenceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F1E6C31F169A6D00094D27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F1E6C51F169A6D00094D27 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 			children = (
 				E4F1E6C51F169A6D00094D27 /* HomeViewController.swift */,
 				E4F1E6D71F169BA800094D27 /* HomeEventTableViewCell.swift */,
+				E41B56ED1F181797001227F5 /* HomeMessageTableViewCell.swift */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -93,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				E4F1E6DA1F169C7400094D27 /* HouseEvent.swift */,
+				E41B56EB1F181653001227F5 /* ChatThread.swift */,
+				E41B56E91F181612001227F5 /* ChatMessage.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -178,8 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4F1E6DB1F169C7400094D27 /* HouseEvent.swift in Sources */,
+				E41B56EC1F181653001227F5 /* ChatThread.swift in Sources */,
+				E41B56EE1F181797001227F5 /* HomeMessageTableViewCell.swift in Sources */,
 				E4F1E6E31F16C14000094D27 /* EventDetailViewController.swift in Sources */,
 				E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */,
+				E41B56EA1F181613001227F5 /* ChatMessage.swift in Sources */,
 				E4F1E6D81F169BA800094D27 /* HomeEventTableViewCell.swift in Sources */,
 				E4F1E6C41F169A6D00094D27 /* AppDelegate.swift in Sources */,
 			);

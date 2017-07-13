@@ -80,7 +80,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeEventTableViewCell" id="2XU-vF-8yO" customClass="HomeEventTableViewCell" customModule="ResidenceManager" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeMessageTableViewCell" id="2XU-vF-8yO" customClass="HomeMessageTableViewCell" customModule="ResidenceManager" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2XU-vF-8yO" id="1dv-sF-cMq">
@@ -102,7 +102,7 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
-                                                            <outlet property="titleLabel" destination="AX3-XT-U8J" id="fzt-Zl-teh"/>
+                                                            <outlet property="bodyLabel" destination="AX3-XT-U8J" id="0GK-RP-L4b"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>

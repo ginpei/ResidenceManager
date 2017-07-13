@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var postersCollectionView: UICollectionView!
     
     var events = [HouseEvent]()
-    var messages = [HouseEvent]()  // TODO
+    var messages = [ChatThread]()
     var posters = [HouseEvent]()  // TODO
 
     override func viewDidLoad() {
@@ -51,13 +51,13 @@ class HomeViewController: UIViewController {
     
     func prepareMessages() {
         // TODO
-        let store = HouseEventStore()
+        let store = ChatThreadStore()
         store.fetchAll() { (result) in
             self.messages.removeAll()
             
             switch result {
-            case let .success(events):
-                self.messages.append(contentsOf: events)
+            case let .success(messages):
+                self.messages.append(contentsOf: messages)
                 
             case let .failure(error):
                 print("ERROR at prepareMessages", error as Any)
@@ -133,12 +133,11 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
     
-    func messageTableView(cellForRowAt indexPath: IndexPath) -> HomeEventTableViewCell {
-        // TODO
+    func messageTableView(cellForRowAt indexPath: IndexPath) -> HomeMessageTableViewCell {
         let message = messages[indexPath.row]
         
-        let cell = messageTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath) as! HomeEventTableViewCell
-        cell.event = message
+        let cell = messageTableView.dequeueReusableCell(withIdentifier: HomeMessageTableViewCell.identifier, for: indexPath) as! HomeMessageTableViewCell
+        cell.thread = message
         
         return cell
     }
