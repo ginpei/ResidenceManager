@@ -103,6 +103,7 @@
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="bodyLabel" destination="AX3-XT-U8J" id="0GK-RP-L4b"/>
+                                                            <segue destination="swt-Jq-XaR" kind="show" identifier="showChatThread" id="eCf-GF-6s6"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -202,7 +203,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnD-dL-c2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209" y="649"/>
+            <point key="canvasLocation" x="2249" y="81"/>
+        </scene>
+        <!--Chat Thread View Controller-->
+        <scene sceneID="H2v-7e-rZv">
+            <objects>
+                <viewController id="swt-Jq-XaR" customClass="ChatThreadViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i1T-4A-6WL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gao-8t-4cG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YH8-aB-yHp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyX-I9-BGc">
+                                <rect key="frame" x="16" y="72" width="343" height="587"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tempLabel" destination="GyX-I9-BGc" id="j1u-Pg-kPX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s2b-Ld-t9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828" y="908.9955022488756"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v9n-8v-5TE">

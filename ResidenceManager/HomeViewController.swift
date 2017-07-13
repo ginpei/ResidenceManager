@@ -98,6 +98,11 @@ class HomeViewController: UIViewController {
             let event = events[indexPath.row]
             vc.event = event
         }
+        else if let vc = destination as? ChatThreadViewController {
+            let indexPath = messageTableView.indexPathForSelectedRow!
+            let thread = messages[indexPath.row]
+            vc.thread = thread
+        }
     }
 }
 
