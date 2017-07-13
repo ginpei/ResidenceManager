@@ -9,7 +9,7 @@
 import UIKit
 
 class HomePosterCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var titleTextView: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     static let identifier = "HomePosterCollectionViewCell"
     static let detailSegueIdentifier = "showPosterDetail"
@@ -21,8 +21,8 @@ class HomePosterCollectionViewCell: UICollectionViewCell {
         }
         set(v) {
             _poster = v
-            if titleTextView != nil {
-                titleTextView.text = v?.title
+            if titleLabel != nil {
+                titleLabel.text = v?.title
             }
         }
     }

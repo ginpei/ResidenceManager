@@ -103,6 +103,11 @@ class HomeViewController: UIViewController {
             let thread = messages[indexPath.row]
             vc.thread = thread
         }
+        else if let vc = destination as? PosterDetailViewController {
+            let indexPath = postersCollectionView.indexPathsForSelectedItems?[0]
+            let poster = posters[indexPath!.row]
+            vc.poster = poster
+        }
     }
 }
 
@@ -182,6 +187,14 @@ extension HomeViewController: UITableViewDelegate, UICollectionViewDelegate {
             eventTableView.deselectRow(at: indexPath, animated: true)
         case messageTableView:
             messageTableView.deselectRow(at: indexPath, animated: true)
+        default: break
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case postersCollectionView:
+            postersCollectionView.deselectItem(at: indexPath, animated: true)
         default: break
         }
     }
