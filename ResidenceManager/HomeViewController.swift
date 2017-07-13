@@ -10,18 +10,26 @@ import UIKit
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var messageTableView: UITableView!
+    @IBOutlet weak var postersCollectionView: UICollectionView!
     
     var events = [HouseEvent]()
+    var messages = [HouseEvent]()  // TODO
+    var posters = [HouseEvent]()  // TODO
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // prepare data
         prepareEvents()
+        prepareMessages()
+        preparePosters()
         
         // prepare UIs
         eventTableView.dataSource = self
         eventTableView.delegate = self
+        messageTableView.dataSource = self
+        messageTableView.delegate = self
     }
     
     func prepareEvents() {
@@ -38,6 +46,42 @@ class HomeViewController: UIViewController {
             }
             
             self.eventTableView.reloadData()
+        }
+    }
+    
+    func prepareMessages() {
+        // TODO
+        let store = HouseEventStore()
+        store.fetchAll() { (result) in
+            self.messages.removeAll()
+            
+            switch result {
+            case let .success(events):
+                self.messages.append(contentsOf: events)
+                
+            case let .failure(error):
+                print("ERROR at prepareMessages", error as Any)
+            }
+            
+            self.messageTableView.reloadData()
+        }
+    }
+    
+    func preparePosters() {
+        // TODO
+        let store = HouseEventStore()
+        store.fetchAll() { (result) in
+            self.posters.removeAll()
+            
+            switch result {
+            case let .success(events):
+                self.posters.append(contentsOf: events)
+                
+            case let .failure(error):
+                print("ERROR at preparePosters", error as Any)
+            }
+            
+            self.postersCollectionView.reloadData()
         }
     }
 
@@ -59,14 +103,42 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        switch tableView {
+        case eventTableView:
+            return events.count
+        case messageTableView:
+            return messages.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch tableView {
+        case eventTableView:
+            return eventTableView(cellForRowAt: indexPath)
+        case messageTableView:
+            return messageTableView(cellForRowAt: indexPath)
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func eventTableView(cellForRowAt indexPath: IndexPath) -> HomeEventTableViewCell {
         let event = events[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath) as! HomeEventTableViewCell
+        let cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath) as! HomeEventTableViewCell
         cell.event = event
+        
+        return cell
+    }
+    
+    func messageTableView(cellForRowAt indexPath: IndexPath) -> HomeEventTableViewCell {
+        // TODO
+        let message = messages[indexPath.row]
+        
+        let cell = messageTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath) as! HomeEventTableViewCell
+        cell.event = message
         
         return cell
     }
@@ -74,6 +146,12 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        eventTableView.deselectRow(at: indexPath, animated: true)
+        switch tableView {
+        case eventTableView:
+            eventTableView.deselectRow(at: indexPath, animated: true)
+        case messageTableView:
+            messageTableView.deselectRow(at: indexPath, animated: true)
+        default: break
+        }
     }
 }
