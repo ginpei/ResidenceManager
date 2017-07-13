@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     
     var events = [HouseEvent]()
     var messages = [ChatThread]()
-    var posters = [HouseEvent]()  // TODO
+    var posters = [Poster]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,8 @@ class HomeViewController: UIViewController {
         eventTableView.delegate = self
         messageTableView.dataSource = self
         messageTableView.delegate = self
+        postersCollectionView.dataSource = self
+        postersCollectionView.delegate = self
     }
     
     func prepareEvents() {
@@ -50,7 +52,6 @@ class HomeViewController: UIViewController {
     }
     
     func prepareMessages() {
-        // TODO
         let store = ChatThreadStore()
         store.fetchAll() { (result) in
             self.messages.removeAll()
@@ -68,14 +69,13 @@ class HomeViewController: UIViewController {
     }
     
     func preparePosters() {
-        // TODO
-        let store = HouseEventStore()
+        let store = PosterStore()
         store.fetchAll() { (result) in
             self.posters.removeAll()
             
             switch result {
-            case let .success(events):
-                self.posters.append(contentsOf: events)
+            case let .success(posters):
+                self.posters.append(contentsOf: posters)
                 
             case let .failure(error):
                 print("ERROR at preparePosters", error as Any)
@@ -106,13 +106,22 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case eventTableView:
             return events.count
         case messageTableView:
             return messages.count
+        default:
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch collectionView {
+        case postersCollectionView:
+            return posters.count
         default:
             return 0
         }
@@ -126,6 +135,15 @@ extension HomeViewController: UITableViewDataSource {
             return messageTableView(cellForRowAt: indexPath)
         default:
             return UITableViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch collectionView {
+        case postersCollectionView:
+            return posterCollectionView(cellForItemAt: indexPath)
+        default:
+            return UICollectionViewCell()
         }
     }
     
@@ -146,9 +164,18 @@ extension HomeViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func posterCollectionView(cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let poster = posters[indexPath.row]
+        
+        let cell = postersCollectionView.dequeueReusableCell(withReuseIdentifier: HomePosterCollectionViewCell.identifier, for: indexPath) as! HomePosterCollectionViewCell
+        cell.poster = poster
+        
+        return cell
+    }
 }
 
-extension HomeViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate, UICollectionViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case eventTableView:
