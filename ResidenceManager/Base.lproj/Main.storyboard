@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="BYZ-38-t0r" customClass="HomeViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="783.95802098950526"/>
         </scene>
-        <!--Event Detail View Controller-->
+        <!--Events-->
         <scene sceneID="bEg-sD-KVP">
             <objects>
-                <viewController id="jeA-8M-N63" customClass="EventDetailViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Events" id="jeA-8M-N63" customClass="EventDetailViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vf4-kz-grA"/>
                         <viewControllerLayoutGuide type="bottom" id="gW6-M3-4G8"/>
@@ -218,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="2249" y="81"/>
         </scene>
-        <!--Chat Thread View Controller-->
+        <!--Messages-->
         <scene sceneID="H2v-7e-rZv">
             <objects>
-                <viewController id="swt-Jq-XaR" customClass="ChatThreadViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Messages" id="swt-Jq-XaR" customClass="ChatThreadViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i1T-4A-6WL"/>
                         <viewControllerLayoutGuide type="bottom" id="Gao-8t-4cG"/>
@@ -248,10 +248,10 @@
             </objects>
             <point key="canvasLocation" x="2828" y="908.9955022488756"/>
         </scene>
-        <!--Poster Detail View Controller-->
+        <!--BBS-->
         <scene sceneID="i8l-5V-aP5">
             <objects>
-                <viewController id="Cbv-l8-HGh" customClass="PosterDetailViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BBS" id="Cbv-l8-HGh" customClass="PosterDetailViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wfk-P2-sM2"/>
                         <viewControllerLayoutGuide type="bottom" id="jtC-Kh-hgZ"/>
