@@ -14,6 +14,9 @@
 		E41B56F31F181E71001227F5 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56F21F181E71001227F5 /* Poster.swift */; };
 		E41B56F51F1820B5001227F5 /* HomePosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56F41F1820B5001227F5 /* HomePosterCollectionViewCell.swift */; };
 		E41B56FA1F1824B1001227F5 /* PosterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56F91F1824B1001227F5 /* PosterDetailViewController.swift */; };
+		E41B56FD1F196B2F001227F5 /* BootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56FC1F196B2F001227F5 /* BootViewController.swift */; };
+		E41B56FF1F196B4D001227F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56FE1F196B4D001227F5 /* User.swift */; };
+		E41B57021F196C85001227F5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B57011F196C85001227F5 /* LogInViewController.swift */; };
 		E4F1E6C41F169A6D00094D27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6C31F169A6D00094D27 /* AppDelegate.swift */; };
 		E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6C51F169A6D00094D27 /* HomeViewController.swift */; };
 		E4F1E6C91F169A6D00094D27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F1E6C71F169A6D00094D27 /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 		E41B56F21F181E71001227F5 /* Poster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 		E41B56F41F1820B5001227F5 /* HomePosterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		E41B56F91F1824B1001227F5 /* PosterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterDetailViewController.swift; sourceTree = "<group>"; };
+		E41B56FC1F196B2F001227F5 /* BootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootViewController.swift; sourceTree = "<group>"; };
+		E41B56FE1F196B4D001227F5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E41B57011F196C85001227F5 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E4F1E6C01F169A6D00094D27 /* ResidenceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResidenceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F1E6C31F169A6D00094D27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F1E6C51F169A6D00094D27 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +77,22 @@
 			name = posterDetail;
 			sourceTree = "<group>";
 		};
+		E41B56FB1F196B1C001227F5 /* boot */ = {
+			isa = PBXGroup;
+			children = (
+				E41B56FC1F196B2F001227F5 /* BootViewController.swift */,
+			);
+			name = boot;
+			sourceTree = "<group>";
+		};
+		E41B57001F196C68001227F5 /* logIn */ = {
+			isa = PBXGroup;
+			children = (
+				E41B57011F196C85001227F5 /* LogInViewController.swift */,
+			);
+			name = logIn;
+			sourceTree = "<group>";
+		};
 		E4F1E6B71F169A6D00094D27 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +126,8 @@
 		E4F1E6D51F169AD000094D27 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				E41B56FB1F196B1C001227F5 /* boot */,
+				E41B57001F196C68001227F5 /* logIn */,
 				E4F1E6D61F169AD800094D27 /* home */,
 				E4F1E6E11F16C10700094D27 /* eventDetail */,
 				E41B56EF1F181BF2001227F5 /* chatThread */,
@@ -130,6 +154,7 @@
 				E41B56EB1F181653001227F5 /* ChatThread.swift */,
 				E41B56E91F181612001227F5 /* ChatMessage.swift */,
 				E41B56F21F181E71001227F5 /* Poster.swift */,
+				E41B56FE1F196B4D001227F5 /* User.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -214,12 +239,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41B56FD1F196B2F001227F5 /* BootViewController.swift in Sources */,
 				E41B56F31F181E71001227F5 /* Poster.swift in Sources */,
 				E4F1E6DB1F169C7400094D27 /* HouseEvent.swift in Sources */,
 				E41B56EC1F181653001227F5 /* ChatThread.swift in Sources */,
 				E41B56F11F181C0E001227F5 /* ChatThreadViewController.swift in Sources */,
 				E41B56EE1F181797001227F5 /* HomeMessageTableViewCell.swift in Sources */,
+				E41B56FF1F196B4D001227F5 /* User.swift in Sources */,
 				E4F1E6E31F16C14000094D27 /* EventDetailViewController.swift in Sources */,
+				E41B57021F196C85001227F5 /* LogInViewController.swift in Sources */,
 				E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */,
 				E41B56EA1F181613001227F5 /* ChatMessage.swift in Sources */,
 				E41B56FA1F1824B1001227F5 /* PosterDetailViewController.swift in Sources */,
