@@ -12,6 +12,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var messageTableView: UITableView!
     @IBOutlet weak var postersCollectionView: UICollectionView!
+    @IBOutlet weak var menuTableView: UITableView!
+    
+    let menuItems: [[Any]] = [
+        // title, identifier
+        ["Profice", "profile"],
+        ]
     
     var events = [HouseEvent]()
     var messages = [ChatThread]()
@@ -123,6 +129,8 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
             return events.count
         case messageTableView:
             return messages.count
+        case menuTableView:
+            return menuItems.count
         default:
             return 0
         }
@@ -143,6 +151,8 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
             return eventTableView(cellForRowAt: indexPath)
         case messageTableView:
             return messageTableView(cellForRowAt: indexPath)
+        case menuTableView:
+            return menuTableView(cellForRowAt: indexPath)
         default:
             return UITableViewCell()
         }
@@ -183,6 +193,15 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
         
         return cell
     }
+    
+    func menuTableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let menuItem = menuItems[indexPath.row]
+        
+        let cell = UITableViewCell()
+        cell.textLabel?.text = menuItem[0] as? String
+        
+        return cell
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UICollectionViewDelegate {
@@ -192,6 +211,9 @@ extension HomeViewController: UITableViewDelegate, UICollectionViewDelegate {
             eventTableView.deselectRow(at: indexPath, animated: true)
         case messageTableView:
             messageTableView.deselectRow(at: indexPath, animated: true)
+        case menuTableView:
+            moveToSomewhereFromMenu(at: indexPath)
+            menuTableView.deselectRow(at: indexPath, animated: true)
         default: break
         }
     }
@@ -201,6 +223,21 @@ extension HomeViewController: UITableViewDelegate, UICollectionViewDelegate {
         case postersCollectionView:
             postersCollectionView.deselectItem(at: indexPath, animated: true)
         default: break
+        }
+    }
+    
+    func moveToSomewhereFromMenu(at indexPath: IndexPath) {
+        let menuItem = menuItems[indexPath.row]
+        if let identifier = menuItem[1] as? String,
+            let vc = storyboard?.instantiateViewController(withIdentifier: identifier)
+        {
+            switch identifier {
+            case "profile":
+                (vc as! ProfileViewController).user = User.loginUser
+            default: break
+            }
+        
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
