@@ -14,14 +14,26 @@ class BootViewController: UIViewController {
     static private let idLoginViewController = "login"
     
     override func viewDidAppear(_ animated: Bool) {
+        UserStore.ensureVaridUser() { result in
+            
+            switch result {
+            case let .success(user):
+                self.goToNext(user)
+            case let .failure(error):
+                // TODO show error detail to user; e.g. network error
+                print("ERROR", error as Any)
+            }
+        }
+    }
+    
+    func goToNext(_ user: User?) {
         var nextView: UIViewController!
-        if User.isVaridLoginUser() {
+        if user != nil {
             nextView = storyboard?.instantiateViewController(withIdentifier: BootViewController.idHomeViewController) as! HomeViewController
         }
         else {
             nextView = storyboard?.instantiateViewController(withIdentifier: BootViewController.idLoginViewController) as! LogInViewController
         }
-        
         let nav = UINavigationController(rootViewController: nextView)
         present(nav, animated: false, completion: nil)
     }

@@ -12,18 +12,27 @@ class User {
     var manager = false
     var name = ""
     
-    static private var _loginUser: User?
-    static var loginUser: User? {
-        get {
-            return _loginUser
-        }
-        set(v) {
-            print("Logged in", v as Any)
-            _loginUser = v
-        }
-    }
+    static var loginUser: User?
     
-    static func isVaridLoginUser() -> Bool {
-        return true
+    init(manager: Bool, name: String) {
+        self.manager = manager
+        self.name = name
+    }
+}
+
+enum UserVaridationResult {
+    case success(User?)  // not nil: logged in, nil: NOT logged in
+    case failure(Error?)  // error
+}
+
+class UserStore {
+    static func ensureVaridUser(completionHandler: @escaping (UserVaridationResult) -> Void) {
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
+            User.loginUser = User(manager: true, name: "Justin Trudeau")
+            let result = UserVaridationResult.success(User.loginUser)
+//            let result = UserVaridationResult.success(nil)
+//            let result = UserVaridationResult.failure(nil)
+            completionHandler(result)
+        }
     }
 }
