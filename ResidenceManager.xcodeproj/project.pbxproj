@@ -18,6 +18,7 @@
 		E41B56FF1F196B4D001227F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56FE1F196B4D001227F5 /* User.swift */; };
 		E41B57021F196C85001227F5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B57011F196C85001227F5 /* LogInViewController.swift */; };
 		E41B57051F198D70001227F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B57041F198D70001227F5 /* ProfileViewController.swift */; };
+		E43A5C681F1D5E3D0017FF50 /* secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = E43A5C671F1D5E3D0017FF50 /* secrets.plist */; };
 		E4F1E6C41F169A6D00094D27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6C31F169A6D00094D27 /* AppDelegate.swift */; };
 		E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6C51F169A6D00094D27 /* HomeViewController.swift */; };
 		E4F1E6C91F169A6D00094D27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F1E6C71F169A6D00094D27 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		E41B56FE1F196B4D001227F5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E41B57011F196C85001227F5 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E41B57041F198D70001227F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E43A5C671F1D5E3D0017FF50 /* secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = secrets.plist; sourceTree = "<group>"; };
 		E4F1E6C01F169A6D00094D27 /* ResidenceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResidenceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F1E6C31F169A6D00094D27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F1E6C51F169A6D00094D27 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				E4F1E6CA1F169A6D00094D27 /* Assets.xcassets */,
 				E4F1E6CC1F169A6D00094D27 /* LaunchScreen.storyboard */,
 				E4F1E6CF1F169A6D00094D27 /* Info.plist */,
+				E43A5C671F1D5E3D0017FF50 /* secrets.plist */,
 			);
 			path = ResidenceManager;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43A5C681F1D5E3D0017FF50 /* secrets.plist in Resources */,
 				E4F1E6CE1F169A6D00094D27 /* LaunchScreen.storyboard in Resources */,
 				E4F1E6CB1F169A6D00094D27 /* Assets.xcassets in Resources */,
 				E4F1E6C91F169A6D00094D27 /* Main.storyboard in Resources */,
