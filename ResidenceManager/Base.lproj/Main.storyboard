@@ -200,7 +200,6 @@
                             <constraint firstItem="zUd-KD-UKy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aoP-Sr-QFj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xam-Rm-JKN"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>

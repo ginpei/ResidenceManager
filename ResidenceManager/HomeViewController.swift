@@ -26,11 +26,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // make sure the title appears (yeah why needed?)
-        let title = self.title
-        self.title = ""
-        self.title = title
-        
         // prepare data
         prepareEvents()
         prepareMessages()
