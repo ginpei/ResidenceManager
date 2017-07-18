@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class User {
     var manager = false

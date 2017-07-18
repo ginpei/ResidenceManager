@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeMessageTableViewCell: UITableViewCell {
     @IBOutlet weak var bodyLabel: UILabel!

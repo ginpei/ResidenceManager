@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EventDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!

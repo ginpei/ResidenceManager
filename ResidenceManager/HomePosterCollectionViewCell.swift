@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomePosterCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
