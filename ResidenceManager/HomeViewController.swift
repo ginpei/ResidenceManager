@@ -30,14 +30,6 @@ class HomeViewController: UIViewController {
         prepareEvents()
         prepareMessages()
         preparePosters()
-        
-        // prepare UIs
-        eventTableView.dataSource = self
-        eventTableView.delegate = self
-        messageTableView.dataSource = self
-        messageTableView.delegate = self
-        postersCollectionView.dataSource = self
-        postersCollectionView.delegate = self
     }
     
     func prepareEvents() {
