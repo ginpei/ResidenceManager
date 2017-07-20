@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class LogInViewController: UIViewController {
-    
+    static private let idHomeViewController = "home"
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtAuthStatus: UILabel!
@@ -24,7 +24,7 @@ class LogInViewController: UIViewController {
             self.txtAuthStatus.text = "Signed In as " + user.email!
         }
         else {
-            self.txtAuthStatus.text = "Signed Out"
+            self.txtAuthStatus.text = "You need to log in"
         }
     }
     
@@ -34,6 +34,16 @@ class LogInViewController: UIViewController {
     }
     
     //    Create User button tap
+    
+    func goToNext() {
+        var nextView: UIViewController!
+        
+            nextView = storyboard?.instantiateViewController(withIdentifier: LogInViewController.idHomeViewController) as! HomeViewController
+        
+        let nav = UINavigationController(rootViewController: nextView)
+        present(nav, animated: false, completion: nil)
+    }
+    
     
     @IBAction func btnCreateUser(_ sender: AnyObject) {
         if let email:String = txtEmail.text, let pass:String = txtPassword.text {
@@ -50,6 +60,7 @@ class LogInViewController: UIViewController {
         }
     }
     
+    
     @IBAction func btnSignedIn(sender: AnyObject) {
         if let email:String = txtEmail.text, let pass:String = txtPassword.text {
             Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
@@ -60,6 +71,7 @@ class LogInViewController: UIViewController {
                     self.txtAuthStatus.text = "Signed in as " + user.email!
                     self.txtEmail.text = nil
                     self.txtPassword.text = nil
+                    self.goToNext()
                 }
             }
         }
