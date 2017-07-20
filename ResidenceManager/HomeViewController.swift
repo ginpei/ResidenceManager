@@ -9,10 +9,12 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var scrollContainerView: UIView!
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var messageTableView: UITableView!
     @IBOutlet weak var postersCollectionView: UICollectionView!
     @IBOutlet weak var menuTableView: UITableView!
+    @IBOutlet weak var scrollContainerViewHeightConstraint: NSLayoutConstraint!
     
     let menuItems: [[Any]] = [
         // title, identifier
@@ -30,6 +32,9 @@ class HomeViewController: UIViewController {
         prepareEvents()
         prepareMessages()
         preparePosters()
+        
+        // prepare view
+        adjustScrollHeightToContent()
     }
     
     func prepareEvents() {
@@ -81,6 +86,14 @@ class HomeViewController: UIViewController {
             
             self.postersCollectionView.reloadData()
         }
+    }
+    
+    func adjustScrollHeightToContent() {
+        scrollContainerView.removeConstraint(scrollContainerViewHeightConstraint)
+        
+        let lastView = menuTableView!
+        let lastBottom = lastView.frame.origin.y + lastView.frame.height
+        scrollContainerView.heightAnchor.constraint(equalToConstant: lastBottom).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
