@@ -91,9 +91,14 @@ class HomeViewController: UIViewController {
     func adjustScrollHeightToContent() {
         scrollContainerView.removeConstraint(scrollContainerViewHeightConstraint)
         
-        let lastView = menuTableView!
-        let lastBottom = lastView.frame.origin.y + lastView.frame.height
-        scrollContainerView.heightAnchor.constraint(equalToConstant: lastBottom).isActive = true
+        var bottomLine = CGFloat(0)
+        for v in scrollContainerView.subviews {
+            let bottom = v.frame.origin.y + v.frame.height
+            if bottom > bottomLine {
+                bottomLine = bottom
+            }
+        }
+        scrollContainerView.heightAnchor.constraint(equalToConstant: bottomLine).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
