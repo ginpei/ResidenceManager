@@ -23,19 +23,14 @@ class User {
 
 enum UserVaridationResult {
     
-    case success(User?)  // not nil: logged in, nil: NOT logged in
+    case success(Firebase.User?)  // not nil: logged in, nil: NOT logged in
     
     case failure(Error?)  // error
 }
 
 class UserStore {
     static func ensureVaridUser(completionHandler: @escaping (UserVaridationResult) -> Void) {
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
-            User.loginUser = User(manager: true, name: "Justin Trudeau")
-//            let result = UserVaridationResult.success(User.loginUser)
-            let result = UserVaridationResult.success(nil)
-//            let result = UserVaridationResult.failure(nil)
-            completionHandler(result)
-        }
+        let result = UserVaridationResult.success(Auth.auth().currentUser)
+        completionHandler(result)
     }
 }

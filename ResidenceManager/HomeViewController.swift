@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     let menuItems: [[Any]] = [
         // title, identifier
         ["Profice", "profile"],
+        ["Log out", "logout"],
         ]
     
     var events = [HouseEvent]()
@@ -115,6 +116,15 @@ class HomeViewController: UIViewController {
             let poster = posters[indexPath!.row]
             vc.poster = poster
         }
+    }
+    
+    func logout() {
+        try! Auth.auth().signOut()
+        
+        // TODO declare the id as a constant
+        let nextView = storyboard?.instantiateViewController(withIdentifier: "login") as! LogInViewController
+        let nav = UINavigationController(rootViewController: nextView)
+        present(nav, animated: false, completion: nil)
     }
 }
 
@@ -224,16 +234,19 @@ extension HomeViewController: UITableViewDelegate, UICollectionViewDelegate {
     
     func moveToSomewhereFromMenu(at indexPath: IndexPath) {
         let menuItem = menuItems[indexPath.row]
-        if let identifier = menuItem[1] as? String,
-            let vc = storyboard?.instantiateViewController(withIdentifier: identifier)
-        {
-            switch identifier {
-            case "profile":
-                (vc as! ProfileViewController).user = User.loginUser
-            default: break
+        if let identifier = menuItem[1] as? String {
+            if identifier == "logout" {
+                logout()
             }
-        
-            navigationController?.pushViewController(vc, animated: true)
+            else if let vc = storyboard?.instantiateViewController(withIdentifier: identifier) {
+                switch identifier {
+                case "profile":
+                    (vc as! ProfileViewController).user = User.loginUser
+                default: break
+                }
+                
+                navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }

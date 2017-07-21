@@ -27,7 +27,7 @@ class BootViewController: UIViewController {
         }
     }
     
-    func goToNext(_ user: User?) {
+    func goToNext(_ user: Firebase.User?) {
         var nextView: UIViewController!
         
         if user != nil {
