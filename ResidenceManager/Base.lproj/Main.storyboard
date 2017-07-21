@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gjy-jE-FxL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gjy-jE-FxL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -67,6 +67,10 @@
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hN4-gY-UkF"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kd8-PQ-CzP"/>
+                                                </connections>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcG-NF-97r">
                                                 <rect key="frame" x="8" y="245" width="359" height="21"/>
@@ -107,6 +111,10 @@
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pk1-xB-c91"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HJ6-pr-OfZ"/>
+                                                </connections>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BBS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83H-0u-ctk">
                                                 <rect key="frame" x="8" y="482" width="359" height="21"/>
@@ -149,6 +157,10 @@
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="iJg-xa-TMa"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xUA-SM-lok"/>
+                                                </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-Fr-Xxv">
                                                 <rect key="frame" x="8" y="647" width="359" height="21"/>
@@ -162,7 +174,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RSj-Xn-lfN">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeMenuTableViewCell" id="RSj-Xn-lfN">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RSj-Xn-lfN" id="BDs-Qv-wmQ">
@@ -207,6 +219,8 @@
                         <outlet property="menuTableView" destination="ihP-YY-268" id="7p8-Bo-Zsh"/>
                         <outlet property="messageTableView" destination="AtF-Iv-vhU" id="SAn-8a-NlJ"/>
                         <outlet property="postersCollectionView" destination="baL-KO-XE3" id="CC4-Ey-Kd4"/>
+                        <outlet property="scrollContainerView" destination="f3b-av-pkz" id="8TF-RI-X06"/>
+                        <outlet property="scrollContainerViewHeightConstraint" destination="zry-uW-Nli" id="8Eu-Gw-a4i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

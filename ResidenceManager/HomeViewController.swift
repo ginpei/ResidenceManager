@@ -10,10 +10,12 @@ import UIKit
 import Firebase
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var scrollContainerView: UIView!
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var messageTableView: UITableView!
     @IBOutlet weak var postersCollectionView: UICollectionView!
     @IBOutlet weak var menuTableView: UITableView!
+    @IBOutlet weak var scrollContainerViewHeightConstraint: NSLayoutConstraint!
     
     let menuItems: [[Any]] = [
         // title, identifier
@@ -33,13 +35,8 @@ class HomeViewController: UIViewController {
         prepareMessages()
         preparePosters()
         
-        // prepare UIs
-        eventTableView.dataSource = self
-        eventTableView.delegate = self
-        messageTableView.dataSource = self
-        messageTableView.delegate = self
-        postersCollectionView.dataSource = self
-        postersCollectionView.delegate = self
+        // prepare view
+        adjustScrollHeightToContent()
     }
     
     func prepareEvents() {
@@ -91,6 +88,19 @@ class HomeViewController: UIViewController {
             
             self.postersCollectionView.reloadData()
         }
+    }
+    
+    func adjustScrollHeightToContent() {
+        scrollContainerView.removeConstraint(scrollContainerViewHeightConstraint)
+        
+        var bottomLine = CGFloat(0)
+        for v in scrollContainerView.subviews {
+            let bottom = v.frame.origin.y + v.frame.height
+            if bottom > bottomLine {
+                bottomLine = bottom
+            }
+        }
+        scrollContainerView.heightAnchor.constraint(equalToConstant: bottomLine).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
