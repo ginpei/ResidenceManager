@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Firebase
 
 class HouseEvent {
     var title: String

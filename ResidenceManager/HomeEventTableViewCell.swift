@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class HomeEventTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!

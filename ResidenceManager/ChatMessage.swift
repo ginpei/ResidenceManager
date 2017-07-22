@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Firebase
 
 class ChatMessage {
     let body: String

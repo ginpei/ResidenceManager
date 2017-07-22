@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 
 class ChatThreadViewController: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!  // TODO

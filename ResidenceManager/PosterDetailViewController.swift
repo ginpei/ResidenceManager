@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 
 class PosterDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
