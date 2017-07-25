@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Firebase
 
 class BootViewController: UIViewController {
-    
+
     static private let idHomeViewController = "home"
     static private let idLoginViewController = "login"
     
@@ -26,8 +27,9 @@ class BootViewController: UIViewController {
         }
     }
     
-    func goToNext(_ user: User?) {
+    func goToNext(_ user: Firebase.User?) {
         var nextView: UIViewController!
+        
         if user != nil {
             nextView = storyboard?.instantiateViewController(withIdentifier: BootViewController.idHomeViewController) as! HomeViewController
         }

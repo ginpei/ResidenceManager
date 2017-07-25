@@ -1,6 +1,7 @@
 .DS_Store
 Pods/
 ResidenceManager/secrets.plist
+ResidenceManager/GoogleService-Info.plist
 
 # --------------------------------
 # Xcode
