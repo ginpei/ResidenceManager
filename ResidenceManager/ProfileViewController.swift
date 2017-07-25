@@ -12,7 +12,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
-    var user: User!
+    var user: RMUser!
 
     override func viewDidLoad() {
         super.viewDidLoad()
