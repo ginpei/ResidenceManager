@@ -12,6 +12,8 @@ import Firebase
 // the name User conflicts with Firebase's class
 class RMUser {
     var manager = false
+    var key = ""
+    var houseKey = ""
     var name = ""
     
     static var loginUser: User?
@@ -21,8 +23,10 @@ class RMUser {
         self.name = name
     }
     
-    init(values: [String: Any]) {
+    init(key: String, values: [String: Any]) {
+        self.key = key
         name = values["name"] as? String ?? ""
+        houseKey = values["houseKey"] as? String ?? ""
     }
     
     private static var _current: RMUser?
@@ -61,7 +65,7 @@ class RMUser {
         ref.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
             var result: RMUserFindResult!
             if let v = snapshot.value as? [String:Any] {
-                result = RMUserFindResult.success(RMUser(values: v))
+                result = RMUserFindResult.success(RMUser(key: key, values: v))
             }
             else {
                 result = RMUserFindResult.notFound

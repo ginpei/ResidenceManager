@@ -44,16 +44,15 @@ class HomeViewController: UIViewController {
     }
     
     func prepareEvents() {
-        let store = HouseEventStore()
-        store.fetchAll() { (result) in
+        HouseEvent.fetchAll(forUser: RMUser.current) { (result) in
             self.events.removeAll()
             
             switch result {
             case let .success(events):
                 self.events.append(contentsOf: events)
-                
             case let .failure(error):
-                print("ERROR at prepareEvents", error as Any)
+                print("ERROR in preparing events")
+                print(error as Any)
             }
             
             self.eventTableView.reloadData()
