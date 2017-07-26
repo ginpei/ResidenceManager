@@ -31,25 +31,28 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // prepare data
-        prepareEvents()
-        prepareMessages()
-        preparePosters()
+        RMUser.updateCurrent() { user in
+            print("Logged in as", user!.name)
+            
+            self.prepareEvents()
+            self.prepareMessages()
+            self.preparePosters()
+        }
         
         // prepare view
         adjustScrollHeightToContent()
     }
     
     func prepareEvents() {
-        let store = HouseEventStore()
-        store.fetchAll() { (result) in
+        HouseEvent.fetchAll(forUser: RMUser.current!) { (result) in
             self.events.removeAll()
             
             switch result {
             case let .success(events):
                 self.events.append(contentsOf: events)
-                
             case let .failure(error):
-                print("ERROR at prepareEvents", error as Any)
+                print("ERROR in preparing events")
+                print(error as Any)
             }
             
             self.eventTableView.reloadData()
@@ -251,7 +254,7 @@ extension HomeViewController: UITableViewDelegate, UICollectionViewDelegate {
             else if let vc = storyboard?.instantiateViewController(withIdentifier: identifier) {
                 switch identifier {
                 case "profile":
-                    (vc as! ProfileViewController).user = User.loginUser
+                    (vc as! ProfileViewController).user = RMUser.current
                 default: break
                 }
                 

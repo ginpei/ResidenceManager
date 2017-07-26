@@ -10,5 +10,6 @@ target ‘ResidenceManager’ do
 pod ‘Firebase/Core’
 pod ‘Firebase/Auth’
 pod ‘Firebase/RemoteConfig’
+pod ‘Firebase/Database’
 
 end

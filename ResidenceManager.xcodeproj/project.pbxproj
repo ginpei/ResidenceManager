@@ -17,7 +17,7 @@
 		E41B56F51F1820B5001227F5 /* HomePosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56F41F1820B5001227F5 /* HomePosterCollectionViewCell.swift */; };
 		E41B56FA1F1824B1001227F5 /* PosterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56F91F1824B1001227F5 /* PosterDetailViewController.swift */; };
 		E41B56FD1F196B2F001227F5 /* BootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56FC1F196B2F001227F5 /* BootViewController.swift */; };
-		E41B56FF1F196B4D001227F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56FE1F196B4D001227F5 /* User.swift */; };
+		E41B56FF1F196B4D001227F5 /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56FE1F196B4D001227F5 /* RMUser.swift */; };
 		E41B57021F196C85001227F5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B57011F196C85001227F5 /* LogInViewController.swift */; };
 		E41B57051F198D70001227F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B57041F198D70001227F5 /* ProfileViewController.swift */; };
 		E43A5C681F1D5E3D0017FF50 /* secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = E43A5C671F1D5E3D0017FF50 /* secrets.plist */; };
@@ -44,7 +44,7 @@
 		E41B56F41F1820B5001227F5 /* HomePosterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		E41B56F91F1824B1001227F5 /* PosterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterDetailViewController.swift; sourceTree = "<group>"; };
 		E41B56FC1F196B2F001227F5 /* BootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootViewController.swift; sourceTree = "<group>"; };
-		E41B56FE1F196B4D001227F5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E41B56FE1F196B4D001227F5 /* RMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUser.swift; sourceTree = "<group>"; };
 		E41B57011F196C85001227F5 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E41B57041F198D70001227F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E43A5C671F1D5E3D0017FF50 /* secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = secrets.plist; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 				E41B56EB1F181653001227F5 /* ChatThread.swift */,
 				E41B56E91F181612001227F5 /* ChatMessage.swift */,
 				E41B56F21F181E71001227F5 /* Poster.swift */,
-				E41B56FE1F196B4D001227F5 /* User.swift */,
+				E41B56FE1F196B4D001227F5 /* RMUser.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				E41B56F11F181C0E001227F5 /* ChatThreadViewController.swift in Sources */,
 				E41B56EE1F181797001227F5 /* HomeMessageTableViewCell.swift in Sources */,
 				E41B57051F198D70001227F5 /* ProfileViewController.swift in Sources */,
-				E41B56FF1F196B4D001227F5 /* User.swift in Sources */,
+				E41B56FF1F196B4D001227F5 /* RMUser.swift in Sources */,
 				E4F1E6E31F16C14000094D27 /* EventDetailViewController.swift in Sources */,
 				E41B57021F196C85001227F5 /* LogInViewController.swift in Sources */,
 				E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */,
