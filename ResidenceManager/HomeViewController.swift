@@ -147,7 +147,7 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
         case eventTableView:
             return events.count + 1  // add "See all"
         case messageTableView:
-            return messages.count
+            return messages.count + 1  // add "See all"
         case menuTableView:
             return menuItems.count
         default:
@@ -202,11 +202,18 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
         return cell
     }
     
-    func messageTableView(cellForRowAt indexPath: IndexPath) -> HomeMessageTableViewCell {
-        let message = messages[indexPath.row]
+    func messageTableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell
         
-        let cell = messageTableView.dequeueReusableCell(withIdentifier: HomeMessageTableViewCell.identifier, for: indexPath) as! HomeMessageTableViewCell
-        cell.thread = message
+        if (indexPath.row < messages.count) {
+            let message = messages[indexPath.row]
+            
+            cell = messageTableView.dequeueReusableCell(withIdentifier: HomeMessageTableViewCell.identifier, for: indexPath)
+            (cell  as! HomeMessageTableViewCell).thread = message
+        }
+        else {
+            cell = messageTableView.dequeueReusableCell(withIdentifier: HomeMessageTableViewCell.idSeeAllCell, for: indexPath)
+        }
         
         return cell
     }
