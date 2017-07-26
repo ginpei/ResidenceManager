@@ -324,7 +324,7 @@
         <!--Profile-->
         <scene sceneID="ICX-aF-o1I">
             <objects>
-                <viewController storyboardIdentifier="profile" title="Profile" id="ApW-Qo-cZR" customClass="ProfileViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" id="ApW-Qo-cZR" customClass="ProfileViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ud0-rZ-XjD"/>
                         <viewControllerLayoutGuide type="bottom" id="Wr9-gr-uBV"/>
@@ -343,6 +343,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Profile" id="wpa-5q-VdA">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="QIK-yo-UXv">
+                            <connections>
+                                <segue destination="f6B-3D-GGW" kind="show" id="phi-cJ-gGf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameLabel" destination="hKb-bk-Vkb" id="Z1D-Ke-yhq"/>
                     </connections>
@@ -350,6 +357,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ye-6l-E6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2076" y="2586.6566716641682"/>
+        </scene>
+        <!--Edit Profile-->
+        <scene sceneID="xmy-Kv-wFd">
+            <objects>
+                <viewController title="Edit Profile" id="f6B-3D-GGW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HqT-fi-rEe"/>
+                        <viewControllerLayoutGuide type="bottom" id="FOg-70-Eon"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zjL-2s-sj8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgE-Qc-V3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3039" y="2587"/>
         </scene>
         <!--Boot View Controller-->
         <scene sceneID="Xv1-7b-LSc">
