@@ -375,6 +375,24 @@
             </objects>
             <point key="canvasLocation" x="-287" y="448"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="ofk-lL-Qx9">
+            <objects>
+                <viewController storyboardIdentifier="welcome" id="ddI-0P-Wzg" customClass="WelcomeViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dF7-fP-1XV"/>
+                        <viewControllerLayoutGuide type="bottom" id="RcG-30-JpO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MXt-wi-fyX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ccf-nI-zJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="511" y="-149"/>
+        </scene>
         <!--Log In View Controller-->
         <scene sceneID="LOR-dc-oWO">
             <objects>
@@ -453,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VyK-Q9-d6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="80.50974512743629"/>
+            <point key="canvasLocation" x="1343" y="-148"/>
         </scene>
     </scenes>
 </document>
