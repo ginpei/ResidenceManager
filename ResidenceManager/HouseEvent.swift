@@ -43,20 +43,14 @@ class HouseEvent {
         }
     }
     
-    static func fetchAll(forUser user: RMUser?, completionHandler: @escaping (HouseEventResult) -> Void) {
-        let houseKey = user?.houseKey ?? ""
-        if houseKey.isEmpty {
-            completionHandler(HouseEventResult.failure(.noHouseKey))
-            return
-        }
-        
-        let query = ref.queryOrdered(byChild: "houseKey").queryEqual(toValue: houseKey)
+    static func fetchAll(forUser user: RMUser, completionHandler: @escaping (HouseEventResult) -> Void) {
+        let query = ref.queryOrdered(byChild: "houseKey").queryEqual(toValue: user.houseKey)
         query.observeSingleEvent(of: .value, with: { (snapshot) in
             if let events = buildEvents(from: snapshot) {
                 completionHandler(.success(events))
             }
             else {
-                completionHandler(.failure(nil))
+                completionHandler(.success([]))
             }
         })
     }

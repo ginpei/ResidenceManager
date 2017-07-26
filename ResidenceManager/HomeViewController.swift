@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
     }
     
     func prepareEvents() {
-        HouseEvent.fetchAll(forUser: RMUser.current) { (result) in
+        HouseEvent.fetchAll(forUser: RMUser.current!) { (result) in
             self.events.removeAll()
             
             switch result {
