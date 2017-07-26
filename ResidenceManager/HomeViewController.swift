@@ -145,9 +145,9 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case eventTableView:
-            return events.count
+            return events.count + 1  // add "See all"
         case messageTableView:
-            return messages.count
+            return messages.count + 1  // add "See all"
         case menuTableView:
             return menuItems.count
         default:
@@ -186,20 +186,34 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
         }
     }
     
-    func eventTableView(cellForRowAt indexPath: IndexPath) -> HomeEventTableViewCell {
-        let event = events[indexPath.row]
+    func eventTableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell
         
-        let cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath) as! HomeEventTableViewCell
-        cell.event = event
+        if (indexPath.row < events.count) {
+            let event = events[indexPath.row]
+            
+            cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath)
+            (cell as! HomeEventTableViewCell).event = event
+        }
+        else {
+            cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.idSeeAllCell, for: indexPath)
+        }
         
         return cell
     }
     
-    func messageTableView(cellForRowAt indexPath: IndexPath) -> HomeMessageTableViewCell {
-        let message = messages[indexPath.row]
+    func messageTableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell
         
-        let cell = messageTableView.dequeueReusableCell(withIdentifier: HomeMessageTableViewCell.identifier, for: indexPath) as! HomeMessageTableViewCell
-        cell.thread = message
+        if (indexPath.row < messages.count) {
+            let message = messages[indexPath.row]
+            
+            cell = messageTableView.dequeueReusableCell(withIdentifier: HomeMessageTableViewCell.identifier, for: indexPath)
+            (cell  as! HomeMessageTableViewCell).thread = message
+        }
+        else {
+            cell = messageTableView.dequeueReusableCell(withIdentifier: HomeMessageTableViewCell.idSeeAllCell, for: indexPath)
+        }
         
         return cell
     }
