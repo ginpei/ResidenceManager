@@ -145,7 +145,7 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case eventTableView:
-            return events.count
+            return events.count + 1  // add "See all"
         case messageTableView:
             return messages.count
         case menuTableView:
@@ -186,11 +186,18 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
         }
     }
     
-    func eventTableView(cellForRowAt indexPath: IndexPath) -> HomeEventTableViewCell {
-        let event = events[indexPath.row]
+    func eventTableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell
         
-        let cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath) as! HomeEventTableViewCell
-        cell.event = event
+        if (indexPath.row < events.count) {
+            let event = events[indexPath.row]
+            
+            cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath)
+            (cell as! HomeEventTableViewCell).event = event
+        }
+        else {
+            cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.idSeeAllCell, for: indexPath)
+        }
         
         return cell
     }
