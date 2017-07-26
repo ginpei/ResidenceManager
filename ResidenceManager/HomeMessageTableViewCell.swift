@@ -12,7 +12,8 @@ class HomeMessageTableViewCell: UITableViewCell {
     @IBOutlet weak var bodyLabel: UILabel!
     
     static let identifier = "HomeMessageTableViewCell"
-    static let detailSegueIdentifier = "showChatThread"
+    static let idSeeAllCell = "HomeMessageTableViewSeeAllCell"
+static let detailSegueIdentifier = "showChatThread"
     
     private var _thread: ChatThread?
     var thread: ChatThread? {
