@@ -192,6 +192,7 @@ UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
         
         if indexPath.item == pages.count {
             let loginCell = collectionView.dequeueReusableCell(withReuseIdentifier: loginCellId, for: indexPath)
+            (loginCell as! LoginCell).viewController = self
             return loginCell
         }
         

@@ -11,6 +11,8 @@ import Firebase
 
 class LoginCell: UICollectionViewCell {
     
+    var viewController: UIViewController!
+    
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -51,7 +53,7 @@ class LoginCell: UICollectionViewCell {
         return textfield
     }()
     
-    let loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(red:1.00, green:0.16, blue:0.32, alpha:1.0)
         button.layer.cornerRadius = 4
@@ -60,6 +62,9 @@ class LoginCell: UICollectionViewCell {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 1
+        
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        
         return button
     }()
     
@@ -79,6 +84,9 @@ class LoginCell: UICollectionViewCell {
         return button
     }()
     
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        return true
+    }
 
     func handleLoginRegister() {
 //        if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
@@ -98,10 +106,16 @@ class LoginCell: UICollectionViewCell {
                 return
             }
             
-            print("Login succesfully")
+            self.goToNext()
             
         })
 
+    }
+    
+    func goToNext() {
+        let nextView = viewController.storyboard?.instantiateViewController(withIdentifier: HomeViewController.identifier) as! HomeViewController
+        let nav = UINavigationController(rootViewController: nextView)
+        viewController.present(nav, animated: false, completion: nil)
     }
     
     

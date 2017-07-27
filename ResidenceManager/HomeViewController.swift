@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var scrollContainerViewHeightConstraint: NSLayoutConstraint!
     
+    static let identifier = "home"
+
     let menuItems: [[Any]] = [
         // title, identifier
         ["Profice", "profile"],
