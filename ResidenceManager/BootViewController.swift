@@ -12,7 +12,8 @@ import Firebase
 class BootViewController: UIViewController {
 
     static private let idHomeViewController = "home"
-    static private let idLoginViewController = "login"
+    static private let idWelcomeViewController = "welcome"
+    
     
     override func viewDidAppear(_ animated: Bool) {
         UserStore.ensureVaridUser() { result in
@@ -34,7 +35,7 @@ class BootViewController: UIViewController {
             nextView = storyboard?.instantiateViewController(withIdentifier: BootViewController.idHomeViewController) as! HomeViewController
         }
         else {
-            nextView = storyboard?.instantiateViewController(withIdentifier: BootViewController.idLoginViewController) as! LogInViewController
+            nextView = storyboard?.instantiateViewController(withIdentifier: BootViewController.idWelcomeViewController) as! WelcomeViewController
         }
         let nav = UINavigationController(rootViewController: nextView)
         present(nav, animated: false, completion: nil)

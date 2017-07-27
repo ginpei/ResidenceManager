@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37E6D3F51F293709006F5EFA /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6D3F41F293709006F5EFA /* PageCell.swift */; };
+		37E6D3F71F293740006F5EFA /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6D3F61F293740006F5EFA /* Page.swift */; };
+		37E6D3F91F29376B006F5EFA /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6D3F81F29376B006F5EFA /* LoginCell.swift */; };
+		37E6D3FB1F293795006F5EFA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6D3FA1F293795006F5EFA /* Extensions.swift */; };
+		37E6D3FD1F2937EB006F5EFA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6D3FC1F2937EB006F5EFA /* WelcomeViewController.swift */; };
 		A062B8E21F1D7FCF001FDFA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A062B8E11F1D7FCF001FDFA4 /* GoogleService-Info.plist */; };
 		DEEF5EC2A4552624851E17D9 /* Pods_ResidenceManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AADDE915652671CA31375C /* Pods_ResidenceManager.framework */; };
 		E41B56EA1F181613001227F5 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56E91F181612001227F5 /* ChatMessage.swift */; };
@@ -33,6 +38,11 @@
 
 /* Begin PBXFileReference section */
 		3586E0A8D17BD5C910181008 /* Pods-ResidenceManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResidenceManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ResidenceManager/Pods-ResidenceManager.debug.xcconfig"; sourceTree = "<group>"; };
+		37E6D3F41F293709006F5EFA /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		37E6D3F61F293740006F5EFA /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		37E6D3F81F29376B006F5EFA /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		37E6D3FA1F293795006F5EFA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		37E6D3FC1F2937EB006F5EFA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		89F58F69F72A2B5E5C96DF10 /* Pods-ResidenceManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResidenceManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-ResidenceManager/Pods-ResidenceManager.release.xcconfig"; sourceTree = "<group>"; };
 		A062B8E11F1D7FCF001FDFA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C5AADDE915652671CA31375C /* Pods_ResidenceManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ResidenceManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				E41B57011F196C85001227F5 /* LogInViewController.swift */,
+				37E6D3FC1F2937EB006F5EFA /* WelcomeViewController.swift */,
 			);
 			name = logIn;
 			sourceTree = "<group>";
@@ -159,6 +170,10 @@
 				A062B8E11F1D7FCF001FDFA4 /* GoogleService-Info.plist */,
 				E4F1E6CF1F169A6D00094D27 /* Info.plist */,
 				E43A5C671F1D5E3D0017FF50 /* secrets.plist */,
+				37E6D3F41F293709006F5EFA /* PageCell.swift */,
+				37E6D3F61F293740006F5EFA /* Page.swift */,
+				37E6D3F81F29376B006F5EFA /* LoginCell.swift */,
+				37E6D3FA1F293795006F5EFA /* Extensions.swift */,
 			);
 			path = ResidenceManager;
 			sourceTree = "<group>";
@@ -339,6 +354,7 @@
 				E41B56EC1F181653001227F5 /* ChatThread.swift in Sources */,
 				E41B56F11F181C0E001227F5 /* ChatThreadViewController.swift in Sources */,
 				E41B56EE1F181797001227F5 /* HomeMessageTableViewCell.swift in Sources */,
+				37E6D3F51F293709006F5EFA /* PageCell.swift in Sources */,
 				E41B57051F198D70001227F5 /* ProfileViewController.swift in Sources */,
 				E41B56FF1F196B4D001227F5 /* RMUser.swift in Sources */,
 				E4F1E6E31F16C14000094D27 /* EventDetailViewController.swift in Sources */,
@@ -346,9 +362,13 @@
 				E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */,
 				E41B56EA1F181613001227F5 /* ChatMessage.swift in Sources */,
 				E41B56FA1F1824B1001227F5 /* PosterDetailViewController.swift in Sources */,
+				37E6D3F71F293740006F5EFA /* Page.swift in Sources */,
+				37E6D3FB1F293795006F5EFA /* Extensions.swift in Sources */,
 				E4F1E6D81F169BA800094D27 /* HomeEventTableViewCell.swift in Sources */,
 				E4F1E6C41F169A6D00094D27 /* AppDelegate.swift in Sources */,
+				37E6D3FD1F2937EB006F5EFA /* WelcomeViewController.swift in Sources */,
 				E41B56F51F1820B5001227F5 /* HomePosterCollectionViewCell.swift in Sources */,
+				37E6D3F91F29376B006F5EFA /* LoginCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
