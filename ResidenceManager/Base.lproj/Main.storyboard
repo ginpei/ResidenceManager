@@ -354,7 +354,7 @@
         <!--Boot View Controller-->
         <scene sceneID="Xv1-7b-LSc">
             <objects>
-                <viewController id="gjy-jE-FxL" customClass="BootViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="boot" id="gjy-jE-FxL" customClass="BootViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8nn-MJ-XFP"/>
                         <viewControllerLayoutGuide type="bottom" id="rR8-iC-Zfc"/>

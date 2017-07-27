@@ -136,9 +136,8 @@ class HomeViewController: UIViewController {
     func logout() {
         try! Auth.auth().signOut()
         
-        // TODO declare the id as a constant
-        let nextView = storyboard?.instantiateViewController(withIdentifier: "login") as! LogInViewController
-        let nav = UINavigationController(rootViewController: nextView)
+        let nextView = storyboard?.instantiateViewController(withIdentifier: BootViewController.identifier)
+        let nav = UINavigationController(rootViewController: nextView!)
         present(nav, animated: false, completion: nil)
     }
 }

@@ -11,6 +11,7 @@ import Firebase
 
 class BootViewController: UIViewController {
 
+    static let identifier = "boot"
     static private let idHomeViewController = "home"
     static private let idWelcomeViewController = "welcome"
     
