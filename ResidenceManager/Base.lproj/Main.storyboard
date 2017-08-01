@@ -321,6 +321,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="titleLabel" destination="GL7-Qz-1Bh" id="7ga-Tc-21o"/>
+                                            <segue destination="jeA-8M-N63" kind="show" id="6Nc-3i-Pwa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -620,4 +621,7 @@
             <point key="canvasLocation" x="920.79999999999995" y="80.50974512743629"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hqK-jL-lMT"/>
+    </inferredMetricsTieBreakers>
 </document>

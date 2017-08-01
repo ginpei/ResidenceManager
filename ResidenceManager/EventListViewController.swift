@@ -33,16 +33,15 @@ class EventListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destination = segue.destination
+
+        if let vc = destination as? EventDetailViewController {
+            let indexPath = eventTableView.indexPathForSelectedRow!
+            let event = events[indexPath.row]
+            vc.event = event
+        }
     }
-    */
 
     @IBAction func add(_ sender: UIBarButtonItem) {
         // TODO implement
