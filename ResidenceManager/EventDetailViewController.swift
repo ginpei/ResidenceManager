@@ -17,6 +17,7 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
         
         if let e = event {
+            title = e.title
             titleLabel.text = e.title
         }
         else {
