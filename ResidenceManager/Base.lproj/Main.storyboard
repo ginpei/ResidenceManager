@@ -290,7 +290,7 @@
         <!--Events-->
         <scene sceneID="4b0-Dc-o4r">
             <objects>
-                <viewController title="Events" id="sHJ-el-Qgl" customClass="EventListViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sHJ-el-Qgl" customClass="EventListViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jGA-gJ-hOc"/>
                         <viewControllerLayoutGuide type="bottom" id="ccH-h9-wIu"/>
@@ -340,7 +340,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="fox-U1-pRO">
+                    <navigationItem key="navigationItem" title="Events" id="fox-U1-pRO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GlU-wh-yrl">
                             <connections>
                                 <action selector="add:" destination="sHJ-el-Qgl" id="JyE-Pw-K5J"/>
@@ -622,6 +622,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hqK-jL-lMT"/>
+        <segue reference="6Nc-3i-Pwa"/>
     </inferredMetricsTieBreakers>
 </document>
