@@ -290,7 +290,7 @@
         <!--Events-->
         <scene sceneID="4b0-Dc-o4r">
             <objects>
-                <viewController title="Events" id="sHJ-el-Qgl" sceneMemberID="viewController">
+                <viewController title="Events" id="sHJ-el-Qgl" customClass="EventListViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jGA-gJ-hOc"/>
                         <viewControllerLayoutGuide type="bottom" id="ccH-h9-wIu"/>
@@ -298,12 +298,62 @@
                     <view key="view" contentMode="scaleToFill" id="KNh-vj-90R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LT6-sN-UVl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventTableViewCell" id="3UF-f3-4ho" customClass="EventTableViewCell" customModule="ResidenceManager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3UF-f3-4ho" id="cXh-7a-zIf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL7-Qz-1Bh">
+                                                    <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="GL7-Qz-1Bh" id="7ga-Tc-21o"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="sHJ-el-Qgl" id="p45-c7-vOh"/>
+                                    <outlet property="delegate" destination="sHJ-el-Qgl" id="piS-Nt-ot3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LT6-sN-UVl" firstAttribute="leading" secondItem="KNh-vj-90R" secondAttribute="leading" id="GYH-Wb-T0I"/>
+                            <constraint firstAttribute="bottom" secondItem="LT6-sN-UVl" secondAttribute="bottom" id="S7n-YA-fkF"/>
+                            <constraint firstItem="LT6-sN-UVl" firstAttribute="top" secondItem="KNh-vj-90R" secondAttribute="top" id="jmW-g9-A4d"/>
+                            <constraint firstAttribute="trailing" secondItem="LT6-sN-UVl" secondAttribute="trailing" id="nZq-RR-DF3"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="fox-U1-pRO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GlU-wh-yrl">
+                            <connections>
+                                <action selector="add:" destination="sHJ-el-Qgl" id="JyE-Pw-K5J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="eventTableView" destination="LT6-sN-UVl" id="0X9-Yw-A7X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToX-Hf-oRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2140" y="-222"/>
+            <point key="canvasLocation" x="2140" y="-222.1889055472264"/>
         </scene>
         <!--Events-->
         <scene sceneID="bEg-sD-KVP">
