@@ -128,6 +128,10 @@ class HomeViewController: UIViewController {
             let event = events[indexPath.row]
             vc.event = event
         }
+        else if let vc = destination as? EventListViewController {
+            vc.events = events
+            vc.delegate = self
+        }
         else if let vc = destination as? ChatThreadViewController {
             let indexPath = messageTableView.indexPathForSelectedRow!
             let thread = messages[indexPath.row]
@@ -284,5 +288,13 @@ extension HomeViewController: UITableViewDelegate, UICollectionViewDelegate {
                 navigationController?.pushViewController(vc, animated: true)
             }
         }
+    }
+}
+
+extension HomeViewController: EventListViewControllerDelegate {
+    func eventListView(_ eventListViewController: EventListViewController, updatedEvents events: [HouseEvent]) {
+        self.events.removeAll()
+        self.events.append(contentsOf: events)
+        eventTableView.reloadData()
     }
 }

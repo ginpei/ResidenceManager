@@ -9,27 +9,13 @@
 import UIKit
 
 class EventListViewController: UIViewController {
-    @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var eventTableView: UITableView!
     
-    var events = [HouseEvent]()  // TODO get injected from home
+    var delegate: EventListViewControllerDelegate?
+    var events: [HouseEvent]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadingIndicatorView.startAnimating()
-        HouseEvent.fetchAll(forUser: RMUser.current!) { (result) in
-            self.loadingIndicatorView.stopAnimating()
-            
-            switch result {
-            case let .success(events):
-                self.events = events
-                self.eventTableView.reloadData()
-            default:
-                // TODO
-                print("ERROR", result)
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +41,7 @@ class EventListViewController: UIViewController {
                 if true {  // TODO append only if it's OK
                     self.events.append(vc.event)
                     self.eventTableView.reloadData()
+                    self.delegate?.eventListView(self, updatedEvents: self.events)
                 }
             }
         }
@@ -82,4 +69,8 @@ extension EventListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         eventTableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+protocol EventListViewControllerDelegate {
+    func eventListView(_ eventListViewController: EventListViewController, updatedEvents events: [HouseEvent]) -> Void
 }
