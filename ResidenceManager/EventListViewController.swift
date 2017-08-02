@@ -9,6 +9,7 @@
 import UIKit
 
 class EventListViewController: UIViewController {
+    @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var eventTableView: UITableView!
     
     var events = [HouseEvent]()
@@ -16,7 +17,10 @@ class EventListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadingIndicatorView.startAnimating()
         HouseEvent.fetchAll(forUser: RMUser.current!) { (result) in
+            self.loadingIndicatorView.stopAnimating()
+            
             switch result {
             case let .success(events):
                 self.events = events

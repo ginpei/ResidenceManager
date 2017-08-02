@@ -330,13 +330,18 @@
                                     <outlet property="delegate" destination="sHJ-el-Qgl" id="piS-Nt-ot3"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hQT-aL-NPh">
+                                <rect key="frame" x="177" y="490" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hQT-aL-NPh" firstAttribute="centerX" secondItem="KNh-vj-90R" secondAttribute="centerX" id="3dh-f2-pPM"/>
                             <constraint firstItem="LT6-sN-UVl" firstAttribute="leading" secondItem="KNh-vj-90R" secondAttribute="leading" id="GYH-Wb-T0I"/>
                             <constraint firstAttribute="bottom" secondItem="LT6-sN-UVl" secondAttribute="bottom" id="S7n-YA-fkF"/>
                             <constraint firstItem="LT6-sN-UVl" firstAttribute="top" secondItem="KNh-vj-90R" secondAttribute="top" id="jmW-g9-A4d"/>
                             <constraint firstAttribute="trailing" secondItem="LT6-sN-UVl" secondAttribute="trailing" id="nZq-RR-DF3"/>
+                            <constraint firstItem="hQT-aL-NPh" firstAttribute="centerY" secondItem="KNh-vj-90R" secondAttribute="centerY" id="rl7-ru-o6O"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -350,6 +355,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="eventTableView" destination="LT6-sN-UVl" id="0X9-Yw-A7X"/>
+                        <outlet property="loadingIndicatorView" destination="hQT-aL-NPh" id="lGP-E1-BPQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToX-Hf-oRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
