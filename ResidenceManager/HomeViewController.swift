@@ -43,6 +43,12 @@ class HomeViewController: UIViewController {
         adjustScrollHeightToContent()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        eventTableView.reloadData()
+        messageTableView.reloadData()
+        postersCollectionView.reloadData()
+    }
+    
     func prepareEvents() {
         HouseEvent.fetchAll(forUser: RMUser.current!) { (result) in
             self.events.removeAll()
