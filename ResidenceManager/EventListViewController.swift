@@ -12,7 +12,7 @@ class EventListViewController: UIViewController {
     @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var eventTableView: UITableView!
     
-    var events = [HouseEvent]()
+    var events = [HouseEvent]()  // TODO get injected from home
 
     override func viewDidLoad() {
         super.viewDidLoad()
