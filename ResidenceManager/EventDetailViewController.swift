@@ -35,7 +35,6 @@ class EventDetailViewController: UIViewController {
             return
         }
         
-        print("UPDATED", event.title)
         title = event.title
         titleLabel.text = event.title
     }
