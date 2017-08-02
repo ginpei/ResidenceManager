@@ -15,14 +15,10 @@ class EventDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let e = event {
-            title = e.title
-            titleLabel.text = e.title
-        }
-        else {
-            print("WARNING wrong navigation")
-        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateScreen()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,5 +27,16 @@ class EventDetailViewController: UIViewController {
         if let vc = vc as? EventEditViewController {
             vc.event = event
         }
+    }
+    
+    private func updateScreen() {
+        if event == nil {
+            print("WARNING wrong navigation")
+            return
+        }
+        
+        print("UPDATED", event.title)
+        title = event.title
+        titleLabel.text = event.title
     }
 }
