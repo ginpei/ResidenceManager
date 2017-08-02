@@ -413,6 +413,11 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Edit" id="dKt-YE-2D3">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bH4-JO-wAc">
+                                            <connections>
+                                                <action selector="cancel:" destination="Qhn-30-WMa" id="loX-IN-H00"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="UQL-uu-lbA">
                                             <connections>
                                                 <action selector="save:" destination="Qhn-30-WMa" id="UFa-8G-GVg"/>

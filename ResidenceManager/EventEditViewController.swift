@@ -50,4 +50,8 @@ class EventEditViewController: UIViewController {
             print("ERROR", error as Any)
         }
     }
+    
+    @IBAction func cancel(_ sender: Any) {
+        exit()
+    }
 }
