@@ -48,8 +48,16 @@ class EventListViewController: UIViewController {
     }
 
     @IBAction func add(_ sender: UIBarButtonItem) {
-        // TODO implement
-        print("ADD")
+        if let vc = storyboard?.instantiateViewController(withIdentifier: EventEditViewController.identifier) as? EventEditViewController {
+            vc.event = HouseEvent()
+            vc.event.houseKey = RMUser.current!.houseKey
+            present(vc, animated: true) {
+                if true {  // TODO append only if it's OK
+                    self.events.append(vc.event)
+                    self.eventTableView.reloadData()
+                }
+            }
+        }
     }
 }
 

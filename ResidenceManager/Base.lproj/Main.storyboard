@@ -406,7 +406,7 @@
         <!--Event Edit View Controller-->
         <scene sceneID="tHe-ty-6F7">
             <objects>
-                <viewController id="Qhn-30-WMa" customClass="EventEditViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventEditViewController" id="Qhn-30-WMa" customClass="EventEditViewController" customModule="ResidenceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QEc-cG-0pS"/>
                         <viewControllerLayoutGuide type="bottom" id="8fb-W7-9e4"/>

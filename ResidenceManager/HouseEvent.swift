@@ -24,7 +24,11 @@ class HouseEvent {
             return HouseEvent.ref.child(key)
         }
     }
+    
+    init() {
+    }
 
+    // TODO: remove
     init(title: String) {
         self.title = title
     }

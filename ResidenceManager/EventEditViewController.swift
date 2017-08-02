@@ -11,6 +11,8 @@ import UIKit
 class EventEditViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     
+    static let identifier = "EventEditViewController"
+    
     var event: HouseEvent!
 
     override func viewDidLoad() {
