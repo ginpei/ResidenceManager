@@ -53,6 +53,9 @@ class HomeViewController: UIViewController {
             case let .failure(error):
                 print("ERROR in preparing events")
                 print(error as Any)
+            default:
+                print("Something weng wrong!!")
+                print(result)
             }
             
             self.eventTableView.reloadData()

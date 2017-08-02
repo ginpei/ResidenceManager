@@ -15,6 +15,16 @@ class HouseEvent {
     var startAt = Date()
     var title = ""
     
+    private var ref: DatabaseReference {
+        get {
+            if (key.isEmpty) {
+                key = HouseEvent.ref.childByAutoId().key
+            }
+            
+            return HouseEvent.ref.child(key)
+        }
+    }
+
     init(title: String) {
         self.title = title
     }
@@ -35,6 +45,19 @@ class HouseEvent {
         else {
             return nil
         }
+    }
+    
+    func save() -> HouseEventResult {
+        if (title.isEmpty) {
+            return HouseEventResult.emptyTitle
+        }
+        
+        ref.setValue([
+            "title": title,
+            "houseKey": houseKey,
+            ])
+        
+        return HouseEventResult.success([self])
     }
     
     static var ref: DatabaseReference {
@@ -74,6 +97,7 @@ class HouseEvent {
 enum HouseEventResult {
     case success([HouseEvent])
     case failure(HouseEventError?)
+    case emptyTitle
 }
 
 enum HouseEventError: Error {
