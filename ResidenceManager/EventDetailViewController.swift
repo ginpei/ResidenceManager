@@ -24,7 +24,7 @@ class EventDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination
         
-        if let vc = vc as? EventEditViewController {
+        if let nav = vc as? UINavigationController, let vc = nav.viewControllers[0] as? EventEditViewController {
             vc.event = event
         }
     }

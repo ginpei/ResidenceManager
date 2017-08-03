@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventEditViewController: UIViewController {
+class EventEditViewController: UITableViewController {
     @IBOutlet weak var titleTextField: UITextField!
     
     static let identifier = "EventEditViewController"
@@ -25,6 +25,10 @@ class EventEditViewController: UIViewController {
             print("WARNING wrong navigation")
             exit()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     private func alertEmptyTitle() {
