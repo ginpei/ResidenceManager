@@ -31,18 +31,12 @@ class EventListViewController: UIViewController {
             let event = events[indexPath.row]
             vc.event = event
         }
-    }
-
-    @IBAction func add(_ sender: UIBarButtonItem) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: EventEditViewController.identifier) as? EventEditViewController {
+        else if let nav = destination as? UINavigationController, let vc = nav.viewControllers[0] as? EventEditViewController {
             vc.event = HouseEvent()
-            vc.event.houseKey = RMUser.current!.houseKey
-            present(vc, animated: true) {
-                if true {  // TODO append only if it's OK
-                    self.events.append(vc.event)
-                    self.eventTableView.reloadData()
-                    self.delegate?.eventListView(self, updatedEvents: self.events)
-                }
+            vc.onSave = { (event) in
+                self.events.append(event)
+                self.eventTableView.reloadData()
+                self.delegate?.eventListView(self, updatedEvents: self.events)
             }
         }
     }

@@ -344,7 +344,7 @@
                     <navigationItem key="navigationItem" title="Events" id="fox-U1-pRO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GlU-wh-yrl">
                             <connections>
-                                <action selector="add:" destination="sHJ-el-Qgl" id="JyE-Pw-K5J"/>
+                                <segue destination="FFa-wU-YnU" kind="showDetail" id="ZXh-RI-mvH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -873,5 +873,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="6Nc-3i-Pwa"/>
+        <segue reference="ZXh-RI-mvH"/>
     </inferredMetricsTieBreakers>
 </document>

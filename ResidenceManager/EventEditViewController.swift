@@ -14,6 +14,7 @@ class EventEditViewController: UITableViewController {
     static let identifier = "EventEditViewController"
     
     var event: HouseEvent!
+    var onSave: ((HouseEvent) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +48,11 @@ class EventEditViewController: UITableViewController {
 
     @IBAction func save(_ sender: Any) {
         event.title = titleTextField.text!
+        event.houseKey = RMUser.current!.houseKey
+        
         switch event.save() {
         case .success:
+            self.onSave?(self.event)
             exit()
         case .emptyTitle:
             alertEmptyTitle()
