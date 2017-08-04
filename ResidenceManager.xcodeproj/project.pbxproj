@@ -20,7 +20,10 @@
 		E41B56FF1F196B4D001227F5 /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56FE1F196B4D001227F5 /* RMUser.swift */; };
 		E41B57021F196C85001227F5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B57011F196C85001227F5 /* LogInViewController.swift */; };
 		E41B57051F198D70001227F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B57041F198D70001227F5 /* ProfileViewController.swift */; };
+		E43278FF1F31330E001F0F93 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43278FE1F31330E001F0F93 /* EventTableViewCell.swift */; };
+		E43279081F31451C001F0F93 /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43279071F31451C001F0F93 /* EventEditViewController.swift */; };
 		E43A5C681F1D5E3D0017FF50 /* secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = E43A5C671F1D5E3D0017FF50 /* secrets.plist */; };
+		E4CEA1ED1F2AA97500D86467 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CEA1EC1F2AA97500D86467 /* EventListViewController.swift */; };
 		E4F1E6C41F169A6D00094D27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6C31F169A6D00094D27 /* AppDelegate.swift */; };
 		E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F1E6C51F169A6D00094D27 /* HomeViewController.swift */; };
 		E4F1E6C91F169A6D00094D27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F1E6C71F169A6D00094D27 /* Main.storyboard */; };
@@ -47,7 +50,10 @@
 		E41B56FE1F196B4D001227F5 /* RMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUser.swift; sourceTree = "<group>"; };
 		E41B57011F196C85001227F5 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E41B57041F198D70001227F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E43278FE1F31330E001F0F93 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		E43279071F31451C001F0F93 /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		E43A5C671F1D5E3D0017FF50 /* secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = secrets.plist; sourceTree = "<group>"; };
+		E4CEA1EC1F2AA97500D86467 /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		E4F1E6C01F169A6D00094D27 /* ResidenceManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResidenceManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F1E6C31F169A6D00094D27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F1E6C51F169A6D00094D27 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +135,23 @@
 			name = profile;
 			sourceTree = "<group>";
 		};
+		E43279061F314501001F0F93 /* eventEdit */ = {
+			isa = PBXGroup;
+			children = (
+				E43279071F31451C001F0F93 /* EventEditViewController.swift */,
+			);
+			name = eventEdit;
+			sourceTree = "<group>";
+		};
+		E4CEA1EB1F2AA95200D86467 /* eventList */ = {
+			isa = PBXGroup;
+			children = (
+				E4CEA1EC1F2AA97500D86467 /* EventListViewController.swift */,
+				E43278FE1F31330E001F0F93 /* EventTableViewCell.swift */,
+			);
+			name = eventList;
+			sourceTree = "<group>";
+		};
 		E4F1E6B71F169A6D00094D27 = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +192,9 @@
 				E41B56FB1F196B1C001227F5 /* boot */,
 				E41B57001F196C68001227F5 /* logIn */,
 				E4F1E6D61F169AD800094D27 /* home */,
+				E4CEA1EB1F2AA95200D86467 /* eventList */,
 				E4F1E6E11F16C10700094D27 /* eventDetail */,
+				E43279061F314501001F0F93 /* eventEdit */,
 				E41B56EF1F181BF2001227F5 /* chatThread */,
 				E41B56F61F182425001227F5 /* posterDetail */,
 				E41B57031F198D48001227F5 /* profile */,
@@ -333,6 +358,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43278FF1F31330E001F0F93 /* EventTableViewCell.swift in Sources */,
+				E4CEA1ED1F2AA97500D86467 /* EventListViewController.swift in Sources */,
 				E41B56FD1F196B2F001227F5 /* BootViewController.swift in Sources */,
 				E41B56F31F181E71001227F5 /* Poster.swift in Sources */,
 				E4F1E6DB1F169C7400094D27 /* HouseEvent.swift in Sources */,
@@ -346,6 +373,7 @@
 				E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */,
 				E41B56EA1F181613001227F5 /* ChatMessage.swift in Sources */,
 				E41B56FA1F1824B1001227F5 /* PosterDetailViewController.swift in Sources */,
+				E43279081F31451C001F0F93 /* EventEditViewController.swift in Sources */,
 				E4F1E6D81F169BA800094D27 /* HomeEventTableViewCell.swift in Sources */,
 				E4F1E6C41F169A6D00094D27 /* AppDelegate.swift in Sources */,
 				E41B56F51F1820B5001227F5 /* HomePosterCollectionViewCell.swift in Sources */,

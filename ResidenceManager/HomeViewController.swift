@@ -43,6 +43,12 @@ class HomeViewController: UIViewController {
         adjustScrollHeightToContent()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        eventTableView.reloadData()
+        messageTableView.reloadData()
+        postersCollectionView.reloadData()
+    }
+    
     func prepareEvents() {
         HouseEvent.fetchAll(forUser: RMUser.current!) { (result) in
             self.events.removeAll()
@@ -53,6 +59,9 @@ class HomeViewController: UIViewController {
             case let .failure(error):
                 print("ERROR in preparing events")
                 print(error as Any)
+            default:
+                print("Something weng wrong!!")
+                print(result)
             }
             
             self.eventTableView.reloadData()
@@ -118,6 +127,10 @@ class HomeViewController: UIViewController {
             let indexPath = eventTableView.indexPathForSelectedRow!
             let event = events[indexPath.row]
             vc.event = event
+        }
+        else if let vc = destination as? EventListViewController {
+            vc.events = events
+            vc.delegate = self
         }
         else if let vc = destination as? ChatThreadViewController {
             let indexPath = messageTableView.indexPathForSelectedRow!
@@ -275,5 +288,13 @@ extension HomeViewController: UITableViewDelegate, UICollectionViewDelegate {
                 navigationController?.pushViewController(vc, animated: true)
             }
         }
+    }
+}
+
+extension HomeViewController: EventListViewControllerDelegate {
+    func eventListView(_ eventListViewController: EventListViewController, updatedEvents events: [HouseEvent]) {
+        self.events.removeAll()
+        self.events.append(contentsOf: events)
+        eventTableView.reloadData()
     }
 }

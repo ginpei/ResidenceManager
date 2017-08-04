@@ -15,29 +15,31 @@ class EventDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let e = event {
-            titleLabel.text = e.title
-        }
-        else {
-            print("WARNING wrong navigation")
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        if event.deleted {
+            dismiss(animated: true, completion: nil)
+        }
+        
+        updateScreen()
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination
+        
+        if let nav = vc as? UINavigationController, let vc = nav.viewControllers[0] as? EventEditViewController {
+            vc.event = event
+        }
+    }
+    
+    private func updateScreen() {
+        if event == nil {
+            print("WARNING wrong navigation")
+            return
+        }
+        
+        title = event.title
+        titleLabel.text = event.title
+    }
 }
