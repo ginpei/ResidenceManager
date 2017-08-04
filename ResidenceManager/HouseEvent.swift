@@ -12,9 +12,26 @@ import Firebase
 class HouseEvent {
     var key = ""
     var houseKey = ""
-    var startAt = Date()
     var title = ""
+    var descriptionText = ""
+    var allDay = true
+    var startAt = Date()
+    var deleted = false
     
+    private var ref: DatabaseReference {
+        get {
+            if (key.isEmpty) {
+                key = HouseEvent.ref.childByAutoId().key
+            }
+            
+            return HouseEvent.ref.child(key)
+        }
+    }
+    
+    init() {
+    }
+
+    // TODO: remove
     init(title: String) {
         self.title = title
     }
@@ -22,8 +39,10 @@ class HouseEvent {
     init(key: String, values: [String: Any]) {
         self.key = key
         houseKey = values["houseKey"] as? String ?? ""
-        startAt = date(at: values["startAt"]) ?? Date()
         title = values["title"] as? String ?? ""
+        descriptionText = values["description"] as? String ?? ""
+        allDay = values["allDay"] as? Bool ?? false
+        startAt = date(at: values["startAt"]) ?? Date()
     }
     
     func date(at timestamp: Any?) -> Date? {
@@ -35,6 +54,27 @@ class HouseEvent {
         else {
             return nil
         }
+    }
+    
+    func save() -> HouseEventResult {
+        if (title.isEmpty) {
+            return HouseEventResult.emptyTitle
+        }
+        
+        ref.setValue([
+            "houseKey": houseKey,
+            "title": title,
+            "description": descriptionText,
+            "allDay": allDay,
+            "startAt": startAt.timeIntervalSince1970,
+            ])
+        
+        return HouseEventResult.success([self])
+    }
+    
+    func delete() {
+        deleted = true
+        ref.removeValue()
     }
     
     static var ref: DatabaseReference {
@@ -74,6 +114,7 @@ class HouseEvent {
 enum HouseEventResult {
     case success([HouseEvent])
     case failure(HouseEventError?)
+    case emptyTitle
 }
 
 enum HouseEventError: Error {
