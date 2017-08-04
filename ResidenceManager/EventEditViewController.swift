@@ -38,8 +38,8 @@ class EventEditViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let e = event {
-            titleTextField.text = e.title
+        if event != nil {
+            updateScreen()
         }
         else {
             print("WARNING wrong navigation")
@@ -98,10 +98,40 @@ class EventEditViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    private func updateScreen() {
+        titleTextField.text = event.title
+        descriptionTextField.text = event.descriptionText
+        alldaySwitch.isOn = event.allDay
+        datePicker.setDate(event.startAt, animated: false)
+        updateDateValueLabel()
+        dateTimePicker.setDate(event.startAt, animated: false)
+        updateDateTimeValueLabel()
+    }
+    
+    private func updateDateValueLabel() {
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateLabel.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    private func updateDateTimeValueLabel() {
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        dateTimeLabel.text = dateFormatter.string(from: dateTimePicker.date)
+    }
+    
     private func updateEvent() {
         event.houseKey = RMUser.current!.houseKey
         event.title = titleTextField.text!
-        //        event.descriptionText = descriptionTextField.text!
+        event.descriptionText = descriptionTextField.text!
+        
+        event.allDay = alldaySwitch.isOn
+        if alldaySwitch.isOn {
+            event.startAt = datePicker.date
+        }
+        else {
+            event.startAt = dateTimePicker.date
+        }
     }
     
     private func exit() {
@@ -133,14 +163,10 @@ class EventEditViewController: UITableViewController {
     }
     
     @IBAction func datePicker_valueChanged(_ sender: UIDatePicker) {
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateLabel.text = dateFormatter.string(from: sender.date)
+        updateDateValueLabel()
     }
     
     @IBAction func dateTimePicker_valueChanged(_ sender: UIDatePicker) {
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .short
-        dateTimeLabel.text = dateFormatter.string(from: sender.date)
+        updateDateTimeValueLabel()
     }
 }

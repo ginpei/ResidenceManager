@@ -12,8 +12,10 @@ import Firebase
 class HouseEvent {
     var key = ""
     var houseKey = ""
-    var startAt = Date()
     var title = ""
+    var descriptionText = ""
+    var allDay = true
+    var startAt = Date()
     
     private var ref: DatabaseReference {
         get {
@@ -36,8 +38,10 @@ class HouseEvent {
     init(key: String, values: [String: Any]) {
         self.key = key
         houseKey = values["houseKey"] as? String ?? ""
-        startAt = date(at: values["startAt"]) ?? Date()
         title = values["title"] as? String ?? ""
+        descriptionText = values["description"] as? String ?? ""
+        allDay = values["allDay"] as? Bool ?? false
+        startAt = date(at: values["startAt"]) ?? Date()
     }
     
     func date(at timestamp: Any?) -> Date? {
@@ -57,8 +61,11 @@ class HouseEvent {
         }
         
         ref.setValue([
-            "title": title,
             "houseKey": houseKey,
+            "title": title,
+            "description": descriptionText,
+            "allDay": allDay,
+            "startAt": startAt.timeIntervalSince1970,
             ])
         
         return HouseEventResult.success([self])
