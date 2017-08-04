@@ -61,19 +61,19 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         dismiss(animated: true, completion: nil)
     }
     
-    func retrieveUser(){
-        
-        Database.database().reference().child("user").observe(.childAdded){ (snapshot:DataSnapshot) in
-            print(Thread.isMainThread)
-            if let dict = snapshot.value as? [String: Any] {
-                let userNameText = dict["username"] as! String
-                let profileImageUrl = dict["profileImageUrl"] as! String
-                let user = Users(userIdText: userNameText, imageUrlText: profileImageUrl)
-                self.user.append(user)
-            }
-            
-        }
-    }
+//    func retrieveUser(){
+//        
+//        Database.database().reference().child("user").observe(.childAdded){ (snapshot:DataSnapshot) in
+//            print(Thread.isMainThread)
+//            if let dict = snapshot.value as? [String: Any] {
+//                let userNameText = dict["username"] as! String
+//                let profileImageUrl = dict["profileImageUrl"] as! String
+//                let user = Users(userIdText: userNameText, imageUrlText: profileImageUrl)
+//                self.user.append(user)
+//            }
+//            
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
