@@ -23,10 +23,17 @@ class EventEditViewController: UITableViewController {
     
     static let identifier = "EventEditViewController"
     
+    let indexOfDateTableViewCell = IndexPath(row: 1, section: 1)
+    let indexOfDateSelectTableViewCell = IndexPath(row: 2, section: 1)
+    let indexOfDateTimeTableViewCell = IndexPath(row: 3, section: 1)
+    let indexOfDateTimeSelectTableViewCell = IndexPath(row: 4, section: 1)
     let dateFormatter = DateFormatter()
     
     var event: HouseEvent!
     var onSave: ((HouseEvent) -> Void)?
+    
+    private var selectingDate = false
+    private var selectingDateTime = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +47,44 @@ class EventEditViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let patterns = [
+            [indexOfDateTableViewCell, { !self.alldaySwitch.isOn }],
+            [indexOfDateSelectTableViewCell, { !self.selectingDate }],
+            [indexOfDateTimeTableViewCell, { self.alldaySwitch.isOn }],
+            [indexOfDateTimeSelectTableViewCell, { !self.selectingDateTime }],
+            ]
+        
+        for p in patterns {
+            let i = p[0] as! IndexPath
+            if (indexPath.row == i.row && indexPath.section == i.section) {
+                let f = p[1] as! () -> Bool
+                if f() {
+                    print("Hide!", i.row, i.section)
+                    return 0
+                }
+                else {
+                    break
+                }
+            }
+        }
+        
+        return super.tableView(tableView, heightForRowAt: indexPath)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let cell = tableView.cellForRow(at: indexPath)
         if cell == dateTableViewCell {
-            dateSelectTableViewCell.isHidden = !dateSelectTableViewCell.isHidden
+            selectingDate = !selectingDate
+            tableView.beginUpdates()
+            tableView.endUpdates()
         }
         else if cell == dateTimeTableViewCell {
-            dateTimeSelectTableViewCell.isHidden = !dateTimeSelectTableViewCell.isHidden
+            selectingDateTime = !selectingDateTime
+            tableView.beginUpdates()
+            tableView.endUpdates()
         }
     }
     
@@ -91,9 +127,9 @@ class EventEditViewController: UITableViewController {
     }
     
     @IBAction func alldaySwitch_valueChanged(_ sender: UISwitch) {
-        let allDay = sender.isOn
-        dateTableViewCell.isHidden = !allDay
-        dateTimeTableViewCell.isHidden = allDay
+        selectingDate = false
+        selectingDateTime = false
+        tableView.reloadData()
     }
     
     @IBAction func datePicker_valueChanged(_ sender: UIDatePicker) {
