@@ -24,15 +24,12 @@ class ProfileViewController: UIViewController {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
+        vc.callback = { (image) in
+            self.profileImageView.image = image
+        }
         present(vc, animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? EditProfileViewController {
-            vc.imagePicked.image = profileImageView.image
-            
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

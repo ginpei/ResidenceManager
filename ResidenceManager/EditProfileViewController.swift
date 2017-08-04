@@ -42,6 +42,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         present(saveAlert, animated: true, completion: nil)
     }
     
+    var callback: ((UIImage?) -> Void)?
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePicked.contentMode = .scaleToFill
@@ -59,9 +61,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     
     func goBack() {
+        print("Getting back to Profile...", callback)
+        callback?(imagePicked.image)
         dismiss(animated: true, completion: nil)
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-//        present(vc, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
