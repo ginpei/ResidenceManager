@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContainerView: UIView!
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var messageTableView: UITableView!
@@ -31,8 +33,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // prepare data
+        loadingIndicator.startAnimating()
         RMUser.updateCurrent() { user in
             print("Logged in as", user!.name)
+            self.loadingIndicator.stopAnimating()
+            self.scrollView.isHidden = false
             
             self.prepareEvents()
             self.prepareMessages()

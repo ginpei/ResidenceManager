@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUd-KD-UKy">
+                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUd-KD-UKy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3b-av-pkz">
@@ -263,12 +263,17 @@
                                     <constraint firstAttribute="bottom" secondItem="f3b-av-pkz" secondAttribute="bottom" id="n1s-zy-Zpk"/>
                                 </constraints>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UBW-as-ZjL">
+                                <rect key="frame" x="177" y="490" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UBW-as-ZjL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2AM-FX-QtG"/>
                             <constraint firstAttribute="trailing" secondItem="zUd-KD-UKy" secondAttribute="trailing" id="7jb-Q3-dZl"/>
                             <constraint firstAttribute="bottom" secondItem="zUd-KD-UKy" secondAttribute="bottom" id="Aw3-hD-lQl"/>
                             <constraint firstItem="zUd-KD-UKy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MUR-5h-np6"/>
+                            <constraint firstItem="UBW-as-ZjL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WGo-uR-Zbc"/>
                             <constraint firstItem="f3b-av-pkz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ZEI-ZO-hnn"/>
                             <constraint firstItem="zUd-KD-UKy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aoP-Sr-QFj"/>
                         </constraints>
@@ -277,11 +282,13 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="eventTableView" destination="5F6-tx-DzI" id="d05-jE-WCS"/>
+                        <outlet property="loadingIndicator" destination="UBW-as-ZjL" id="6zk-67-3C4"/>
                         <outlet property="menuTableView" destination="ihP-YY-268" id="7p8-Bo-Zsh"/>
                         <outlet property="messageTableView" destination="AtF-Iv-vhU" id="SAn-8a-NlJ"/>
                         <outlet property="postersCollectionView" destination="baL-KO-XE3" id="CC4-Ey-Kd4"/>
                         <outlet property="scrollContainerView" destination="f3b-av-pkz" id="8TF-RI-X06"/>
                         <outlet property="scrollContainerViewHeightConstraint" destination="zry-uW-Nli" id="8Eu-Gw-a4i"/>
+                        <outlet property="scrollView" destination="zUd-KD-UKy" id="x9A-MO-vUn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -920,7 +927,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6Nc-3i-Pwa"/>
+        <segue reference="hqK-jL-lMT"/>
         <segue reference="ZXh-RI-mvH"/>
     </inferredMetricsTieBreakers>
 </document>
