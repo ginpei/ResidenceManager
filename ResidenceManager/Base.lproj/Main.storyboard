@@ -472,6 +472,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaG-4E-avE">
                                                     <rect key="frame" x="308" y="8" width="51" height="27.5"/>
+                                                    <connections>
+                                                        <action selector="alldaySwitch_valueChanged:" destination="9ny-a0-Xh6" eventType="valueChanged" id="pDf-P0-ggN"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -517,7 +520,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="171" id="obG-Mu-Hwm">
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="171" id="obG-Mu-Hwm">
                                         <rect key="frame" x="0.0" y="232" width="375" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="obG-Mu-Hwm" id="jHK-ZZ-0FT">
@@ -529,6 +532,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="523486033.54080802">
                                                         <!--2017-08-03 20:47:13 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="datePicker_valueChanged:" destination="9ny-a0-Xh6" eventType="valueChanged" id="Fhj-ho-ukj"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -539,7 +545,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AKT-5z-xlK">
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AKT-5z-xlK">
                                         <rect key="frame" x="0.0" y="403" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AKT-5z-xlK" id="Rvw-zJ-aJb">
@@ -572,7 +578,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="171" id="3tt-fX-jHI">
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="171" id="3tt-fX-jHI">
                                         <rect key="frame" x="0.0" y="447" width="375" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3tt-fX-jHI" id="tnl-9j-PZ1">
@@ -584,6 +590,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="523486033.54080802">
                                                         <!--2017-08-03 20:47:13 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="dateTimePicker_valueChanged:" destination="9ny-a0-Xh6" eventType="valueChanged" id="7QD-5z-lBX"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -615,6 +624,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="alldaySwitch" destination="iaG-4E-avE" id="Alr-YW-APL"/>
+                        <outlet property="dateLabel" destination="DYi-np-ccg" id="zlE-Mc-Qtw"/>
+                        <outlet property="datePicker" destination="vtt-tV-HU7" id="wWo-Et-xfj"/>
+                        <outlet property="dateSelectTableViewCell" destination="obG-Mu-Hwm" id="BsT-oX-LSD"/>
+                        <outlet property="dateTableViewCell" destination="Khx-pQ-H7Y" id="OTn-1x-0uK"/>
+                        <outlet property="dateTimeLabel" destination="tZX-Ci-v2P" id="jff-2u-T8i"/>
+                        <outlet property="dateTimePicker" destination="N45-eE-idq" id="5Se-PR-cED"/>
+                        <outlet property="dateTimeSelectTableViewCell" destination="3tt-fX-jHI" id="Q9i-ux-As7"/>
+                        <outlet property="dateTimeTableViewCell" destination="AKT-5z-xlK" id="7kP-Ro-Gal"/>
+                        <outlet property="descriptionTextField" destination="999-eZ-Ae4" id="4Lm-fi-sPm"/>
                         <outlet property="titleTextField" destination="D7I-Lr-qJx" id="a23-3H-YQj"/>
                     </connections>
                 </tableViewController>
