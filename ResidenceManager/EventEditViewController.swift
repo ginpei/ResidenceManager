@@ -60,7 +60,6 @@ class EventEditViewController: UITableViewController {
             if (indexPath.row == i.row && indexPath.section == i.section) {
                 let f = p[1] as! () -> Bool
                 if f() {
-                    print("Hide!", i.row, i.section)
                     return 0
                 }
                 else {
