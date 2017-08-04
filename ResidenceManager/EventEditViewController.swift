@@ -38,6 +38,8 @@ class EventEditViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIMisc.setDefaultStyle(toNavigation: navigationController)
 
         if event != nil {
             updateScreen()

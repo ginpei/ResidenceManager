@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContainerView: UIView!
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var messageTableView: UITableView!
@@ -31,8 +33,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // prepare data
+        loadingIndicator.startAnimating()
         RMUser.updateCurrent() { user in
             print("Logged in as", user!.name)
+            self.loadingIndicator.stopAnimating()
+            self.scrollView.isHidden = false
             
             self.prepareEvents()
             self.prepareMessages()
@@ -158,7 +163,7 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case eventTableView:
-            return events.count + 1  // add "See all"
+            return events.count
         case messageTableView:
             return messages.count + 1  // add "See all"
         case menuTableView:
@@ -200,17 +205,10 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource 
     }
     
     func eventTableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell
+        let event = events[indexPath.row]
         
-        if (indexPath.row < events.count) {
-            let event = events[indexPath.row]
-            
-            cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath)
-            (cell as! HomeEventTableViewCell).event = event
-        }
-        else {
-            cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.idSeeAllCell, for: indexPath)
-        }
+        let cell = eventTableView.dequeueReusableCell(withIdentifier: HomeEventTableViewCell.identifier, for: indexPath) as! HomeEventTableViewCell
+        cell.event = event
         
         return cell
     }
