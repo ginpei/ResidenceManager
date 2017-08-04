@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     
     let menuItems: [[Any]] = [
         // title, identifier
-        ["Profice", "profile"],
+        ["Profile", "profile"],
         ["Log out", "logout"],
         ]
     

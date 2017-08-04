@@ -45,21 +45,21 @@ class LogInViewController: UIViewController {
     }
     
     
-//    @IBAction func btnCreateUser(_ sender: AnyObject) {
-//        if let email:String = txtEmail.text, let pass:String = txtPassword.text {
-//            Auth.auth().createUser(withEmail: email, password: pass) { (user,error) in
-//                if let error = error {
-//                    self.txtAuthStatus.text = error.localizedDescription
-//                }
-//                if let user = user {
-//                    self.txtAuthStatus.text = "Signed In as " + user.email!
-//                    self.txtEmail.text = nil
-//                    self.txtPassword.text = nil
-//                    self.goToNext()
-//                }
-//            }
-//        }
-//    }
+    @IBAction func btnCreateUser(_ sender: AnyObject) {
+        if let email:String = txtEmail.text, let pass:String = txtPassword.text {
+            Auth.auth().createUser(withEmail: email, password: pass) { (user,error) in
+                if let error = error {
+                    self.txtAuthStatus.text = error.localizedDescription
+                }
+                if let user = user {
+                    self.txtAuthStatus.text = "Signed In as " + user.email!
+                    self.txtEmail.text = nil
+                    self.txtPassword.text = nil
+                    self.goToNext()
+                }
+            }
+        }
+    }
     
     
     @IBAction func btnSignedIn(sender: AnyObject) {
