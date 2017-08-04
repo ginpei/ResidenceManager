@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -54,16 +55,24 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         goBack()
     }
     
-//    func imageSaveController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-//        imagePicked.image = image
-//        self.dismiss(animated: true, completion: nil);
-//    }
-
-    
     func goBack() {
-        print("Getting back to Profile...", callback)
+        
         callback?(imagePicked.image)
         dismiss(animated: true, completion: nil)
+    }
+    
+    func retrieveUser(){
+        
+        Database.database().reference().child("user").observe(.childAdded){ (snapshot:DataSnapshot) in
+            print(Thread.isMainThread)
+            if let dict = snapshot.value as? [String: Any] {
+                let userNameText = dict["username"] as! String
+                let profileImageUrl = dict["profileImageUrl"] as! String
+                let user = Users(userIdText: userNameText, imageUrlText: profileImageUrl)
+                self.user.append(user)
+            }
+            
+        }
     }
     
     override func viewDidLoad() {
