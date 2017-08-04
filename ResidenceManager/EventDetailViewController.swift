@@ -10,8 +10,16 @@ import UIKit
 
 class EventDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     var event: HouseEvent!
+    
+    private let dateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .full
+        return f
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +28,13 @@ class EventDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if event.deleted {
             dismiss(animated: true, completion: nil)
+        }
+        
+        if event.allDay {
+            dateFormatter.timeStyle = .none
+        }
+        else {
+            dateFormatter.timeStyle = .short
         }
         
         updateScreen()
@@ -41,5 +56,7 @@ class EventDetailViewController: UIViewController {
         
         title = event.title
         titleLabel.text = event.title
+        dateLabel.text = dateFormatter.string(from: event.startAt)
+//        descriptionTextView.text = event.descriptionText
     }
 }
