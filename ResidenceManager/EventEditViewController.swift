@@ -27,6 +27,7 @@ class EventEditViewController: UITableViewController {
     let indexOfDateSelectTableViewCell = IndexPath(row: 2, section: 1)
     let indexOfDateTimeTableViewCell = IndexPath(row: 3, section: 1)
     let indexOfDateTimeSelectTableViewCell = IndexPath(row: 4, section: 1)
+    let indexOfDangerZonSection = 2
     let dateFormatter = DateFormatter()
     
     var event: HouseEvent!
@@ -45,6 +46,22 @@ class EventEditViewController: UITableViewController {
             print("WARNING wrong navigation")
             exit()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == indexOfDangerZonSection && event.key.isEmpty {
+            return nil
+        }
+        
+        return super.tableView(tableView, titleForHeaderInSection: section)
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == indexOfDangerZonSection && event.key.isEmpty {
+            return 0
+        }
+        
+        return super.tableView(tableView, numberOfRowsInSection: section)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
