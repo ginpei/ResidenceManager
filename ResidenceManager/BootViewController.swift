@@ -36,7 +36,15 @@ class BootViewController: UIViewController {
         else {
             nextView = storyboard?.instantiateViewController(withIdentifier: BootViewController.idLoginViewController) as! LogInViewController
         }
-        let nav = UINavigationController(rootViewController: nextView)
+        let nav = createNavigationController(rootViewController: nextView)
         present(nav, animated: false, completion: nil)
+    }
+    
+    private func createNavigationController(rootViewController: UIViewController) -> UINavigationController {
+        let nav = UINavigationController(rootViewController: rootViewController)
+        
+        UIMisc.setDefaultStyle(toNavigation: nav)
+        
+        return nav
     }
 }
