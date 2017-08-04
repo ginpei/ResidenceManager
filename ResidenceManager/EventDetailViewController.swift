@@ -18,6 +18,10 @@ class EventDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if event.deleted {
+            dismiss(animated: true, completion: nil)
+        }
+        
         updateScreen()
     }
     

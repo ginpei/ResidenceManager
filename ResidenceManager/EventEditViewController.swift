@@ -168,4 +168,18 @@ class EventEditViewController: UITableViewController {
     @IBAction func dateTimePicker_valueChanged(_ sender: UIDatePicker) {
         updateDateTimeValueLabel()
     }
+    
+    @IBAction func deleteButton_touchUpInside(_ sender: Any) {
+        let title = "Delete Event"
+        let message = "Are you sure you want to permanently delete this item?"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .default) { (action) in
+            self.event.delete()
+            self.exit()
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        present(alert, animated: true, completion: nil)
+    }
 }

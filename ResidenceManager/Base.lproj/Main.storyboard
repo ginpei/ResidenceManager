@@ -605,6 +605,35 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Danger Zone" id="Wct-EB-Id2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xXe-4F-7Mn">
+                                        <rect key="frame" x="0.0" y="646" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xXe-4F-7Mn" id="fy2-Rf-sLF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dg9-1n-dck">
+                                                    <rect key="frame" x="18" y="8" width="359" height="27.5"/>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteButton_touchUpInside:" destination="9ny-a0-Xh6" eventType="touchUpInside" id="Eig-Q9-v4j"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Dg9-1n-dck" secondAttribute="bottom" id="4nd-QS-lZe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Dg9-1n-dck" secondAttribute="trailing" constant="-10" id="CKo-s3-6JN"/>
+                                                <constraint firstItem="Dg9-1n-dck" firstAttribute="top" secondItem="fy2-Rf-sLF" secondAttribute="topMargin" id="aRz-CC-hZf"/>
+                                                <constraint firstItem="Dg9-1n-dck" firstAttribute="leading" secondItem="fy2-Rf-sLF" secondAttribute="leadingMargin" constant="10" id="dZ6-0O-nAB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="9ny-a0-Xh6" id="M9P-xA-exG"/>

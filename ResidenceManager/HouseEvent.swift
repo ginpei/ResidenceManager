@@ -16,6 +16,7 @@ class HouseEvent {
     var descriptionText = ""
     var allDay = true
     var startAt = Date()
+    var deleted = false
     
     private var ref: DatabaseReference {
         get {
@@ -69,6 +70,11 @@ class HouseEvent {
             ])
         
         return HouseEventResult.success([self])
+    }
+    
+    func delete() {
+        deleted = true
+        ref.removeValue()
     }
     
     static var ref: DatabaseReference {
