@@ -385,6 +385,7 @@
 				E41B56EE1F181797001227F5 /* HomeMessageTableViewCell.swift in Sources */,
 				E41B57051F198D70001227F5 /* ProfileViewController.swift in Sources */,
 				A0296F951F33EDFA00BD3D8F /* EditProfileViewController.swift in Sources */,
+				E420FDB11F34EFD4005733CE /* RMColor.swift in Sources */,
 				E41B56FF1F196B4D001227F5 /* RMUser.swift in Sources */,
 				E4F1E6E31F16C14000094D27 /* EventDetailViewController.swift in Sources */,
 				E41B57021F196C85001227F5 /* LogInViewController.swift in Sources */,

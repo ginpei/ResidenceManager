@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 
+
 // the name User conflicts with Firebase's class
 class RMUser {
     var manager = false
@@ -38,7 +39,7 @@ class RMUser {
     
     static var ref: DatabaseReference {
         get {
-            return Database.database().reference().child("user")
+            return Database.database().reference().child("users")
         }
     }
     

@@ -31,11 +31,17 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         // prepare data
         loadingIndicator.startAnimating()
         RMUser.updateCurrent() { user in
-            print("Logged in as", user!.name)
+            if user == nil {
+                self.logout()
+                return
+            }
+            
+//            print("Logged in as", user!.name)
             self.loadingIndicator.stopAnimating()
             self.scrollView.isHidden = false
             
