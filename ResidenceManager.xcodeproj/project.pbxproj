@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A0296F951F33EDFA00BD3D8F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0296F941F33EDFA00BD3D8F /* EditProfileViewController.swift */; };
 		A062B8E21F1D7FCF001FDFA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A062B8E11F1D7FCF001FDFA4 /* GoogleService-Info.plist */; };
+		A0D5E4591F43E9F3004FCE51 /* NewMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5E4581F43E9F3004FCE51 /* NewMessageTableViewController.swift */; };
 		DEEF5EC2A4552624851E17D9 /* Pods_ResidenceManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AADDE915652671CA31375C /* Pods_ResidenceManager.framework */; };
 		E41B56EA1F181613001227F5 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56E91F181612001227F5 /* ChatMessage.swift */; };
 		E41B56EC1F181653001227F5 /* ChatThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B56EB1F181653001227F5 /* ChatThread.swift */; };
@@ -42,6 +43,7 @@
 		89F58F69F72A2B5E5C96DF10 /* Pods-ResidenceManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResidenceManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-ResidenceManager/Pods-ResidenceManager.release.xcconfig"; sourceTree = "<group>"; };
 		A0296F941F33EDFA00BD3D8F /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A062B8E11F1D7FCF001FDFA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A0D5E4581F43E9F3004FCE51 /* NewMessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageTableViewController.swift; sourceTree = "<group>"; };
 		C5AADDE915652671CA31375C /* Pods_ResidenceManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ResidenceManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41B56E91F181612001227F5 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		E41B56EB1F181653001227F5 /* ChatThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatThread.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E41B56F01F181C0E001227F5 /* ChatThreadViewController.swift */,
+				A0D5E4581F43E9F3004FCE51 /* NewMessageTableViewController.swift */,
 			);
 			name = chatThread;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				E420FDB11F34EFD4005733CE /* RMColor.swift in Sources */,
 				E41B56FF1F196B4D001227F5 /* RMUser.swift in Sources */,
 				E4F1E6E31F16C14000094D27 /* EventDetailViewController.swift in Sources */,
+				A0D5E4591F43E9F3004FCE51 /* NewMessageTableViewController.swift in Sources */,
 				E41B57021F196C85001227F5 /* LogInViewController.swift in Sources */,
 				E4F1E6C61F169A6D00094D27 /* HomeViewController.swift in Sources */,
 				E41B56EA1F181613001227F5 /* ChatMessage.swift in Sources */,

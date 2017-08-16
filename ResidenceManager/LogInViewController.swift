@@ -47,11 +47,6 @@ class LogInViewController: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //    Create User button tap
     
     func goToNext() {
@@ -60,7 +55,7 @@ class LogInViewController: UIViewController {
         nextView = storyboard?.instantiateViewController(withIdentifier: LogInViewController.idHomeViewController) as! HomeViewController
         
         let nav = UINavigationController(rootViewController: nextView)
-        present(nav, animated: false, completion: nil)
+        present(nav, animated: true, completion: nil)
     }
     
     

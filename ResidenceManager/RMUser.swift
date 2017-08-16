@@ -55,6 +55,7 @@ class RMUser {
             switch result {
             case let .success(user):
                 _current = user
+                
                 completionHandler(user)
             default:
                 completionHandler(nil)
@@ -67,6 +68,8 @@ class RMUser {
             var result: RMUserFindResult!
             if let v = snapshot.value as? [String:Any] {
                 result = RMUserFindResult.success(RMUser(key: key, values: v))
+                print(snapshot)
+              
             }
             else {
                 result = RMUserFindResult.notFound
