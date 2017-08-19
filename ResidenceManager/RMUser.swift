@@ -16,6 +16,8 @@ class RMUser {
     var key = ""
     var houseKey = ""
     var name = ""
+    var email = ""
+    
     
     static var loginUser: User?
     
@@ -27,6 +29,7 @@ class RMUser {
     init(key: String, values: [String: Any]) {
         self.key = key
         name = values["name"] as? String ?? ""
+        email = values["email"] as? String ?? ""
         houseKey = values["houseKey"] as? String ?? ""
     }
     
